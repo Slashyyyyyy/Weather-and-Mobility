@@ -1,0 +1,3709 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f81de4661e26d730305f1b03cd55b16c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f81de4661e26d730305f1b03cd55b16c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f81de4661e26d730305f1b03cd55b16c = L.map(
+                "map_f81de4661e26d730305f1b03cd55b16c",
+                {
+                    center: [47.5, 13.3],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_f81de4661e26d730305f1b03cd55b16c);
+
+            
+
+        
+    
+            var tile_layer_c44a72bf7030f73cc366bc49e2afafce = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c44a72bf7030f73cc366bc49e2afafce.addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+    var color_map_81dfb4e6c8fd2c59916f8919bf2359cf = {};
+
+    
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.color = d3.scale.threshold()
+              .domain([12.022727272727273, 12.066829597299048, 12.110931921870822, 12.155034246442595, 12.19913657101437, 12.243238895586144, 12.287341220157918, 12.331443544729693, 12.375545869301467, 12.41964819387324, 12.463750518445014, 12.507852843016789, 12.551955167588563, 12.596057492160337, 12.64015981673211, 12.684262141303885, 12.728364465875659, 12.772466790447433, 12.816569115019208, 12.86067143959098, 12.904773764162755, 12.94887608873453, 12.992978413306304, 13.037080737878078, 13.081183062449853, 13.125285387021625, 13.1693877115934, 13.213490036165174, 13.257592360736949, 13.301694685308723, 13.345797009880496, 13.38989933445227, 13.434001659024045, 13.478103983595819, 13.522206308167593, 13.566308632739368, 13.61041095731114, 13.654513281882915, 13.69861560645469, 13.742717931026464, 13.786820255598238, 13.83092258017001, 13.875024904741785, 13.91912722931356, 13.963229553885334, 14.007331878457109, 14.051434203028883, 14.095536527600657, 14.13963885217243, 14.183741176744205, 14.227843501315979, 14.271945825887753, 14.316048150459526, 14.3601504750313, 14.404252799603075, 14.44835512417485, 14.492457448746624, 14.536559773318398, 14.58066209789017, 14.624764422461945, 14.66886674703372, 14.712969071605494, 14.757071396177269, 14.801173720749041, 14.845276045320816, 14.88937836989259, 14.933480694464365, 14.977583019036139, 15.021685343607913, 15.065787668179686, 15.10988999275146, 15.153992317323235, 15.19809464189501, 15.242196966466782, 15.286299291038556, 15.33040161561033, 15.374503940182105, 15.41860626475388, 15.462708589325654, 15.506810913897429, 15.550913238469201, 15.595015563040976, 15.63911788761275, 15.683220212184525, 15.727322536756297, 15.771424861328072, 15.815527185899846, 15.85962951047162, 15.903731835043395, 15.94783415961517, 15.991936484186944, 16.03603880875872, 16.080141133330493, 16.124243457902264, 16.16834578247404, 16.212448107045812, 16.256550431617587, 16.30065275618936, 16.344755080761136, 16.38885740533291, 16.432959729904685, 16.47706205447646, 16.521164379048233, 16.565266703620004, 16.60936902819178, 16.653471352763553, 16.697573677335328, 16.741676001907102, 16.785778326478876, 16.82988065105065, 16.873982975622425, 16.9180853001942, 16.962187624765974, 17.00628994933775, 17.050392273909523, 17.094494598481294, 17.13859692305307, 17.182699247624843, 17.226801572196617, 17.27090389676839, 17.315006221340166, 17.35910854591194, 17.403210870483715, 17.44731319505549, 17.491415519627264, 17.535517844199035, 17.57962016877081, 17.623722493342584, 17.667824817914358, 17.711927142486132, 17.756029467057907, 17.80013179162968, 17.844234116201456, 17.88833644077323, 17.932438765345005, 17.97654108991678, 18.020643414488553, 18.064745739060324, 18.1088480636321, 18.152950388203873, 18.197052712775648, 18.241155037347422, 18.285257361919196, 18.32935968649097, 18.373462011062745, 18.417564335634516, 18.46166666020629, 18.505768984778065, 18.54987130934984, 18.593973633921614, 18.63807595849339, 18.682178283065163, 18.726280607636937, 18.77038293220871, 18.814485256780486, 18.85858758135226, 18.902689905924035, 18.94679223049581, 18.990894555067584, 19.034996879639355, 19.07909920421113, 19.123201528782904, 19.167303853354678, 19.211406177926452, 19.255508502498227, 19.29961082707, 19.343713151641776, 19.387815476213547, 19.43191780078532, 19.476020125357095, 19.52012244992887, 19.564224774500644, 19.60832709907242, 19.652429423644193, 19.696531748215968, 19.740634072787742, 19.784736397359517, 19.82883872193129, 19.872941046503065, 19.91704337107484, 19.961145695646614, 20.005248020218385, 20.04935034479016, 20.093452669361934, 20.13755499393371, 20.181657318505483, 20.225759643077254, 20.26986196764903, 20.313964292220806, 20.35806661679258, 20.40216894136435, 20.446271265936126, 20.4903735905079, 20.534475915079675, 20.57857823965145, 20.622680564223224, 20.666782888794998, 20.710885213366772, 20.754987537938547, 20.79908986251032, 20.843192187082096, 20.88729451165387, 20.931396836225645, 20.97549916079742, 21.019601485369193, 21.063703809940964, 21.10780613451274, 21.151908459084513, 21.196010783656288, 21.240113108228062, 21.284215432799833, 21.328317757371607, 21.372420081943382, 21.416522406515156, 21.46062473108693, 21.504727055658705, 21.54882938023048, 21.592931704802254, 21.63703402937403, 21.681136353945803, 21.725238678517577, 21.76934100308935, 21.813443327661126, 21.8575456522329, 21.90164797680467, 21.945750301376446, 21.98985262594822, 22.033954950519995, 22.07805727509177, 22.12215959966354, 22.166261924235314, 22.21036424880709, 22.254466573378863, 22.298568897950638, 22.342671222522412, 22.386773547094187, 22.43087587166596, 22.474978196237736, 22.51908052080951, 22.563182845381284, 22.60728516995306, 22.651387494524833, 22.695489819096608, 22.739592143668382, 22.783694468240157, 22.82779679281193, 22.871899117383705, 22.91600144195548, 22.960103766527254, 23.004206091099025, 23.0483084156708, 23.092410740242574, 23.13651306481435, 23.180615389386123, 23.224717713957894, 23.268820038529668, 23.312922363101443, 23.357024687673217, 23.40112701224499, 23.445229336816766, 23.48933166138854, 23.533433985960315, 23.57753631053209, 23.621638635103864, 23.665740959675638, 23.709843284247412, 23.753945608819187, 23.79804793339096, 23.842150257962736, 23.886252582534507, 23.93035490710628, 23.974457231678056, 24.01855955624983, 24.062661880821604, 24.106764205393375, 24.15086652996515, 24.194968854536924, 24.2390711791087, 24.283173503680473, 24.327275828252247, 24.371378152824022, 24.415480477395796, 24.45958280196757, 24.503685126539345, 24.54778745111112, 24.591889775682894, 24.63599210025467, 24.680094424826443, 24.724196749398217, 24.768299073969988, 24.812401398541763, 24.856503723113537, 24.90060604768531, 24.944708372257082, 24.98881069682886, 25.032913021400635, 25.07701534597241, 25.121117670544184, 25.165219995115955, 25.20932231968773, 25.253424644259503, 25.297526968831278, 25.341629293403052, 25.385731617974827, 25.4298339425466, 25.473936267118376, 25.51803859169015, 25.562140916261924, 25.6062432408337, 25.650345565405473, 25.694447889977248, 25.738550214549022, 25.782652539120797, 25.826754863692567, 25.870857188264342, 25.914959512836116, 25.95906183740789, 26.003164161979665, 26.047266486551436, 26.09136881112321, 26.135471135694985, 26.17957346026676, 26.223675784838534, 26.267778109410308, 26.311880433982083, 26.355982758553857, 26.40008508312563, 26.444187407697406, 26.48828973226918, 26.532392056840955, 26.57649438141273, 26.620596705984504, 26.664699030556278, 26.70880135512805, 26.752903679699823, 26.797006004271598, 26.841108328843372, 26.885210653415147, 26.929312977986918, 26.973415302558692, 27.017517627130466, 27.06161995170224, 27.105722276274015, 27.14982460084579, 27.193926925417564, 27.23802924998934, 27.282131574561113, 27.326233899132887, 27.370336223704662, 27.414438548276436, 27.45854087284821, 27.502643197419985, 27.54674552199176, 27.590847846563534, 27.63495017113531, 27.679052495707083, 27.723154820278857, 27.76725714485063, 27.811359469422403, 27.855461793994177, 27.89956411856595, 27.943666443137726, 27.987768767709497, 28.03187109228127, 28.075973416853046, 28.12007574142482, 28.164178065996595, 28.20828039056837, 28.252382715140143, 28.296485039711918, 28.340587364283692, 28.384689688855467, 28.428792013427238, 28.472894337999012, 28.51699666257079, 28.561098987142564, 28.60520131171434, 28.649303636286113, 28.693405960857888, 28.737508285429662, 28.781610610001433, 28.825712934573207, 28.869815259144982, 28.913917583716756, 28.95801990828853, 29.002122232860305, 29.04622455743208, 29.090326882003854, 29.13442920657563, 29.1785315311474, 29.222633855719174, 29.26673618029095, 29.310838504862723, 29.354940829434497, 29.39904315400627, 29.443145478578046, 29.48724780314982, 29.531350127721595, 29.57545245229337, 29.61955477686514, 29.663657101436915, 29.70775942600869, 29.751861750580463, 29.795964075152238, 29.840066399724012, 29.884168724295787, 29.92827104886756, 29.972373373439336, 30.01647569801111, 30.06057802258288, 30.104680347154655, 30.14878267172643, 30.192884996298204, 30.23698732086998, 30.281089645441753, 30.325191970013528, 30.369294294585302, 30.413396619157076, 30.45749894372885, 30.50160126830062, 30.545703592872396, 30.58980591744417, 30.633908242015945, 30.67801056658772, 30.722112891159494, 30.76621521573127, 30.810317540303043, 30.854419864874817, 30.89852218944659, 30.942624514018362, 30.986726838590137, 31.03082916316191, 31.074931487733686, 31.11903381230546, 31.163136136877235, 31.20723846144901, 31.251340786020783, 31.295443110592558, 31.339545435164332, 31.383647759736103, 31.427750084307878, 31.471852408879652, 31.515954733451427, 31.5600570580232, 31.604159382594975, 31.64826170716675, 31.692364031738524, 31.7364663563103, 31.78056868088207, 31.824671005453844, 31.86877333002562, 31.912875654597393, 31.956977979169167, 32.00108030374094, 32.045182628312716, 32.08928495288449, 32.133387277456265, 32.17748960202804, 32.221591926599814, 32.26569425117158, 32.30979657574336, 32.35389890031513, 32.39800122488691, 32.44210354945868, 32.48620587403046, 32.53030819860223, 32.57441052317401, 32.61851284774578, 32.66261517231755, 32.706717496889326, 32.7508198214611, 32.794922146032874, 32.83902447060465, 32.88312679517642, 32.9272291197482, 32.97133144431997, 33.01543376889175, 33.05953609346352, 33.10363841803529, 33.14774074260707, 33.19184306717884, 33.23594539175062, 33.28004771632239, 33.32415004089417, 33.36825236546594, 33.412354690037716, 33.45645701460949, 33.500559339181265, 33.54466166375303, 33.588763988324814, 33.63286631289658, 33.67696863746836, 33.72107096204013, 33.76517328661191, 33.80927561118368, 33.85337793575546, 33.89748026032723, 33.94158258489901, 33.98568490947078, 34.02978723404255])
+              .range(['#ffff00ff', '#ffff00ff', '#fffe00ff', '#fffe00ff', '#fffd00ff', '#fffd00ff', '#fffc00ff', '#fffc00ff', '#fffb00ff', '#fffb00ff', '#fffa00ff', '#fffa00ff', '#fff900ff', '#fff900ff', '#fff800ff', '#fff800ff', '#fff700ff', '#fff700ff', '#fff600ff', '#fff600ff', '#fff500ff', '#fff500ff', '#fff400ff', '#fff400ff', '#fff300ff', '#fff300ff', '#fff200ff', '#fff200ff', '#fff100ff', '#fff100ff', '#fff000ff', '#fff000ff', '#ffef00ff', '#ffef00ff', '#ffee00ff', '#ffee00ff', '#ffed00ff', '#ffed00ff', '#ffec00ff', '#ffeb00ff', '#ffeb00ff', '#ffea00ff', '#ffea00ff', '#ffe900ff', '#ffe900ff', '#ffe800ff', '#ffe800ff', '#ffe700ff', '#ffe700ff', '#ffe600ff', '#ffe600ff', '#ffe500ff', '#ffe500ff', '#ffe400ff', '#ffe400ff', '#ffe300ff', '#ffe300ff', '#ffe200ff', '#ffe200ff', '#ffe100ff', '#ffe100ff', '#ffe000ff', '#ffe000ff', '#ffdf00ff', '#ffdf00ff', '#ffde00ff', '#ffde00ff', '#ffdd00ff', '#ffdd00ff', '#ffdc00ff', '#ffdc00ff', '#ffdb00ff', '#ffdb00ff', '#ffda00ff', '#ffda00ff', '#ffd900ff', '#ffd900ff', '#ffd800ff', '#ffd700ff', '#ffd700ff', '#ffd600ff', '#ffd600ff', '#ffd500ff', '#ffd500ff', '#ffd400ff', '#ffd400ff', '#ffd300ff', '#ffd300ff', '#ffd200ff', '#ffd200ff', '#ffd100ff', '#ffd100ff', '#ffd000ff', '#ffd000ff', '#ffcf00ff', '#ffcf00ff', '#ffce00ff', '#ffce00ff', '#ffcd00ff', '#ffcd00ff', '#ffcc00ff', '#ffcc00ff', '#ffcb00ff', '#ffcb00ff', '#ffca00ff', '#ffca00ff', '#ffc900ff', '#ffc900ff', '#ffc800ff', '#ffc800ff', '#ffc700ff', '#ffc700ff', '#ffc600ff', '#ffc600ff', '#ffc500ff', '#ffc500ff', '#ffc400ff', '#ffc300ff', '#ffc300ff', '#ffc200ff', '#ffc200ff', '#ffc100ff', '#ffc100ff', '#ffc000ff', '#ffc000ff', '#ffbf00ff', '#ffbf00ff', '#ffbe00ff', '#ffbe00ff', '#ffbd00ff', '#ffbd00ff', '#ffbc00ff', '#ffbc00ff', '#ffbb00ff', '#ffbb00ff', '#ffba00ff', '#ffba00ff', '#ffb900ff', '#ffb900ff', '#ffb800ff', '#ffb800ff', '#ffb700ff', '#ffb700ff', '#ffb600ff', '#ffb600ff', '#ffb500ff', '#ffb500ff', '#ffb400ff', '#ffb400ff', '#ffb300ff', '#ffb300ff', '#ffb200ff', '#ffb200ff', '#ffb100ff', '#ffb000ff', '#ffb000ff', '#ffaf00ff', '#ffaf00ff', '#ffae00ff', '#ffae00ff', '#ffad00ff', '#ffad00ff', '#ffac00ff', '#ffac00ff', '#ffab00ff', '#ffab00ff', '#ffaa00ff', '#ffaa00ff', '#ffa900ff', '#ffa900ff', '#ffa800ff', '#ffa800ff', '#ffa700ff', '#ffa700ff', '#ffa600ff', '#ffa600ff', '#ffa500ff', '#ffa500ff', '#ffa400ff', '#ffa400ff', '#ffa300ff', '#ffa300ff', '#ffa200ff', '#ffa200ff', '#ffa100ff', '#ffa100ff', '#ffa000ff', '#ffa000ff', '#ff9f00ff', '#ff9f00ff', '#ff9e00ff', '#ff9e00ff', '#ff9d00ff', '#ff9c00ff', '#ff9c00ff', '#ff9b00ff', '#ff9b00ff', '#ff9a00ff', '#ff9a00ff', '#ff9900ff', '#ff9900ff', '#ff9800ff', '#ff9800ff', '#ff9700ff', '#ff9700ff', '#ff9600ff', '#ff9600ff', '#ff9500ff', '#ff9500ff', '#ff9400ff', '#ff9400ff', '#ff9300ff', '#ff9300ff', '#ff9200ff', '#ff9200ff', '#ff9100ff', '#ff9100ff', '#ff9000ff', '#ff9000ff', '#ff8f00ff', '#ff8f00ff', '#ff8e00ff', '#ff8e00ff', '#ff8d00ff', '#ff8d00ff', '#ff8c00ff', '#ff8c00ff', '#ff8b00ff', '#ff8b00ff', '#ff8a00ff', '#ff8a00ff', '#ff8900ff', '#ff8800ff', '#ff8800ff', '#ff8700ff', '#ff8700ff', '#ff8600ff', '#ff8600ff', '#ff8500ff', '#ff8500ff', '#ff8400ff', '#ff8400ff', '#ff8300ff', '#ff8300ff', '#ff8200ff', '#ff8200ff', '#ff8100ff', '#ff8100ff', '#ff8000ff', '#ff8000ff', '#ff7f00ff', '#ff7f00ff', '#ff7e00ff', '#ff7e00ff', '#ff7d00ff', '#ff7d00ff', '#ff7c00ff', '#ff7c00ff', '#ff7b00ff', '#ff7b00ff', '#ff7a00ff', '#ff7a00ff', '#ff7900ff', '#ff7900ff', '#ff7800ff', '#ff7800ff', '#ff7700ff', '#ff7700ff', '#ff7600ff', '#ff7500ff', '#ff7500ff', '#ff7400ff', '#ff7400ff', '#ff7300ff', '#ff7300ff', '#ff7200ff', '#ff7200ff', '#ff7100ff', '#ff7100ff', '#ff7000ff', '#ff7000ff', '#ff6f00ff', '#ff6f00ff', '#ff6e00ff', '#ff6e00ff', '#ff6d00ff', '#ff6d00ff', '#ff6c00ff', '#ff6c00ff', '#ff6b00ff', '#ff6b00ff', '#ff6a00ff', '#ff6a00ff', '#ff6900ff', '#ff6900ff', '#ff6800ff', '#ff6800ff', '#ff6700ff', '#ff6700ff', '#ff6600ff', '#ff6600ff', '#ff6500ff', '#ff6500ff', '#ff6400ff', '#ff6400ff', '#ff6300ff', '#ff6300ff', '#ff6200ff', '#ff6100ff', '#ff6100ff', '#ff6000ff', '#ff6000ff', '#ff5f00ff', '#ff5f00ff', '#ff5e00ff', '#ff5e00ff', '#ff5d00ff', '#ff5d00ff', '#ff5c00ff', '#ff5c00ff', '#ff5b00ff', '#ff5b00ff', '#ff5a00ff', '#ff5a00ff', '#ff5900ff', '#ff5900ff', '#ff5800ff', '#ff5800ff', '#ff5700ff', '#ff5700ff', '#ff5600ff', '#ff5600ff', '#ff5500ff', '#ff5500ff', '#ff5400ff', '#ff5400ff', '#ff5300ff', '#ff5300ff', '#ff5200ff', '#ff5200ff', '#ff5100ff', '#ff5100ff', '#ff5000ff', '#ff5000ff', '#ff4f00ff', '#ff4f00ff', '#ff4e00ff', '#ff4d00ff', '#ff4d00ff', '#ff4c00ff', '#ff4c00ff', '#ff4b00ff', '#ff4b00ff', '#ff4a00ff', '#ff4a00ff', '#ff4900ff', '#ff4900ff', '#ff4800ff', '#ff4800ff', '#ff4700ff', '#ff4700ff', '#ff4600ff', '#ff4600ff', '#ff4500ff', '#ff4500ff', '#ff4400ff', '#ff4400ff', '#ff4300ff', '#ff4300ff', '#ff4200ff', '#ff4200ff', '#ff4100ff', '#ff4100ff', '#ff4000ff', '#ff4000ff', '#ff3f00ff', '#ff3f00ff', '#ff3e00ff', '#ff3e00ff', '#ff3d00ff', '#ff3d00ff', '#ff3c00ff', '#ff3c00ff', '#ff3b00ff', '#ff3a00ff', '#ff3a00ff', '#ff3900ff', '#ff3900ff', '#ff3800ff', '#ff3800ff', '#ff3700ff', '#ff3700ff', '#ff3600ff', '#ff3600ff', '#ff3500ff', '#ff3500ff', '#ff3400ff', '#ff3400ff', '#ff3300ff', '#ff3300ff', '#ff3200ff', '#ff3200ff', '#ff3100ff', '#ff3100ff', '#ff3000ff', '#ff3000ff', '#ff2f00ff', '#ff2f00ff', '#ff2e00ff', '#ff2e00ff', '#ff2d00ff', '#ff2d00ff', '#ff2c00ff', '#ff2c00ff', '#ff2b00ff', '#ff2b00ff', '#ff2a00ff', '#ff2a00ff', '#ff2900ff', '#ff2900ff', '#ff2800ff', '#ff2800ff', '#ff2700ff', '#ff2600ff', '#ff2600ff', '#ff2500ff', '#ff2500ff', '#ff2400ff', '#ff2400ff', '#ff2300ff', '#ff2300ff', '#ff2200ff', '#ff2200ff', '#ff2100ff', '#ff2100ff', '#ff2000ff', '#ff2000ff', '#ff1f00ff', '#ff1f00ff', '#ff1e00ff', '#ff1e00ff', '#ff1d00ff', '#ff1d00ff', '#ff1c00ff', '#ff1c00ff', '#ff1b00ff', '#ff1b00ff', '#ff1a00ff', '#ff1a00ff', '#ff1900ff', '#ff1900ff', '#ff1800ff', '#ff1800ff', '#ff1700ff', '#ff1700ff', '#ff1600ff', '#ff1600ff', '#ff1500ff', '#ff1500ff', '#ff1400ff', '#ff1400ff', '#ff1300ff', '#ff1200ff', '#ff1200ff', '#ff1100ff', '#ff1100ff', '#ff1000ff', '#ff1000ff', '#ff0f00ff', '#ff0f00ff', '#ff0e00ff', '#ff0e00ff', '#ff0d00ff', '#ff0d00ff', '#ff0c00ff', '#ff0c00ff', '#ff0b00ff', '#ff0b00ff', '#ff0a00ff', '#ff0a00ff', '#ff0900ff', '#ff0900ff', '#ff0800ff', '#ff0800ff', '#ff0700ff', '#ff0700ff', '#ff0600ff', '#ff0600ff', '#ff0500ff', '#ff0500ff', '#ff0400ff', '#ff0400ff', '#ff0300ff', '#ff0300ff', '#ff0200ff', '#ff0200ff', '#ff0100ff', '#ff0100ff', '#ff0000ff', '#ff0000ff']);
+    
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.x = d3.scale.linear()
+              .domain([12.022727272727273, 34.02978723404255])
+              .range([0, 450 - 50]);
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.legend = L.control({position: 'topright'});
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.legend.addTo(map_f81de4661e26d730305f1b03cd55b16c);
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.xAxis = d3.svg.axis()
+        .scale(color_map_81dfb4e6c8fd2c59916f8919bf2359cf.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([12.022727272727273, 34.02978723404255]);
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.g = color_map_81dfb4e6c8fd2c59916f8919bf2359cf.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.g.selectAll("rect")
+        .data(color_map_81dfb4e6c8fd2c59916f8919bf2359cf.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_81dfb4e6c8fd2c59916f8919bf2359cf.x(color_map_81dfb4e6c8fd2c59916f8919bf2359cf.color.domain()[i - 1]) : color_map_81dfb4e6c8fd2c59916f8919bf2359cf.x.range()[0],
+            x1: i < color_map_81dfb4e6c8fd2c59916f8919bf2359cf.color.domain().length ? color_map_81dfb4e6c8fd2c59916f8919bf2359cf.x(color_map_81dfb4e6c8fd2c59916f8919bf2359cf.color.domain()[i]) : color_map_81dfb4e6c8fd2c59916f8919bf2359cf.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_81dfb4e6c8fd2c59916f8919bf2359cf.g.call(color_map_81dfb4e6c8fd2c59916f8919bf2359cf.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Average Delay (minutes)");
+    
+            var circle_marker_fa3b2822b05b90c1a63c937dec0f59ef = L.circleMarker(
+                [46.7463329637924, 12.974439515567],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.329, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_f8f2911fa55ed34fc29cbd86b701422e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e837b7fd9bad0ad5b7d1fa1f5642fd3 = $(`<div id="html_4e837b7fd9bad0ad5b7d1fa1f5642fd3" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Oberdrauburg<br><b>Average Delay:</b> 34.03 minutes<br><b>Station Count:</b> 235</div>`)[0];
+                popup_f8f2911fa55ed34fc29cbd86b701422e.setContent(html_4e837b7fd9bad0ad5b7d1fa1f5642fd3);
+            
+        
+
+        circle_marker_fa3b2822b05b90c1a63c937dec0f59ef.bindPopup(popup_f8f2911fa55ed34fc29cbd86b701422e)
+        ;
+
+        
+    
+    
+            circle_marker_fa3b2822b05b90c1a63c937dec0f59ef.bindTooltip(
+                `<div>
+                     Oberdrauburg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f5b8422e89c05f214f3aee038e05b43 = L.circleMarker(
+                [46.6158074986651, 14.3136659076245],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.8838, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_4d84a705f16b5fc279fdcfc38e040fcb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9494304a3468dcd9d9bb94e3ac7418aa = $(`<div id="html_9494304a3468dcd9d9bb94e3ac7418aa" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Klagenfurt Hbf<br><b>Average Delay:</b> 34.00 minutes<br><b>Station Count:</b> 4917</div>`)[0];
+                popup_4d84a705f16b5fc279fdcfc38e040fcb.setContent(html_9494304a3468dcd9d9bb94e3ac7418aa);
+            
+        
+
+        circle_marker_1f5b8422e89c05f214f3aee038e05b43.bindPopup(popup_4d84a705f16b5fc279fdcfc38e040fcb)
+        ;
+
+        
+    
+    
+            circle_marker_1f5b8422e89c05f214f3aee038e05b43.bindTooltip(
+                `<div>
+                     Klagenfurt Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a754d2f63951a2ee21616d2142aa3c77 = L.circleMarker(
+                [46.7416976562355, 13.1920923257867],
+                {"bubblingMouseEvents": true, "color": "#ff0300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0300ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4018, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_f0f65d9ddd5adb9dab65723f6c042c4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08daed42166caa9f5c63c7beabb85fcd = $(`<div id="html_08daed42166caa9f5c63c7beabb85fcd" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Greifenburg-Weißensee<br><b>Average Delay:</b> 33.73 minutes<br><b>Station Count:</b> 287</div>`)[0];
+                popup_f0f65d9ddd5adb9dab65723f6c042c4c.setContent(html_08daed42166caa9f5c63c7beabb85fcd);
+            
+        
+
+        circle_marker_a754d2f63951a2ee21616d2142aa3c77.bindPopup(popup_f0f65d9ddd5adb9dab65723f6c042c4c)
+        ;
+
+        
+    
+    
+            circle_marker_a754d2f63951a2ee21616d2142aa3c77.bindTooltip(
+                `<div>
+                     Greifenburg-Weißensee
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8fca2189aa7c912b171d31bfe996f47 = L.circleMarker(
+                [46.8283850916648, 12.7712855140351],
+                {"bubblingMouseEvents": true, "color": "#ff0600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.3136, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_cd5b3f1210cd578824b684ebadbccc7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef3c1705164eee379b8886f041a1c059 = $(`<div id="html_ef3c1705164eee379b8886f041a1c059" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Lienz in Osttirol<br><b>Average Delay:</b> 33.50 minutes<br><b>Station Count:</b> 224</div>`)[0];
+                popup_cd5b3f1210cd578824b684ebadbccc7b.setContent(html_ef3c1705164eee379b8886f041a1c059);
+            
+        
+
+        circle_marker_a8fca2189aa7c912b171d31bfe996f47.bindPopup(popup_cd5b3f1210cd578824b684ebadbccc7b)
+        ;
+
+        
+    
+    
+            circle_marker_a8fca2189aa7c912b171d31bfe996f47.bindTooltip(
+                `<div>
+                     Lienz in Osttirol
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f99f701b8ba9eb1057846f57d87c14d2 = L.circleMarker(
+                [48.4642204474756, 13.4421114356976],
+                {"bubblingMouseEvents": true, "color": "#ff0700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0346, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_37a4cb80654a5619ffcb4fc969dfa254 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fef86f0d2350f302570b2ce6ad630d4c = $(`<div id="html_fef86f0d2350f302570b2ce6ad630d4c" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Schärding<br><b>Average Delay:</b> 33.42 minutes<br><b>Station Count:</b> 739</div>`)[0];
+                popup_37a4cb80654a5619ffcb4fc969dfa254.setContent(html_fef86f0d2350f302570b2ce6ad630d4c);
+            
+        
+
+        circle_marker_f99f701b8ba9eb1057846f57d87c14d2.bindPopup(popup_37a4cb80654a5619ffcb4fc969dfa254)
+        ;
+
+        
+    
+    
+            circle_marker_f99f701b8ba9eb1057846f57d87c14d2.bindTooltip(
+                `<div>
+                     Schärding
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3197d3b8c00c450dd7a66a74b2576a5e = L.circleMarker(
+                [47.3373800107614, 9.63744077972521],
+                {"bubblingMouseEvents": true, "color": "#ff0800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1876, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_7188cbaa76b284d10692f94e518a19ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d32463cc83173857c6fdbee7e6bb2a80 = $(`<div id="html_d32463cc83173857c6fdbee7e6bb2a80" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Götzis<br><b>Average Delay:</b> 33.31 minutes<br><b>Station Count:</b> 134</div>`)[0];
+                popup_7188cbaa76b284d10692f94e518a19ac.setContent(html_d32463cc83173857c6fdbee7e6bb2a80);
+            
+        
+
+        circle_marker_3197d3b8c00c450dd7a66a74b2576a5e.bindPopup(popup_7188cbaa76b284d10692f94e518a19ac)
+        ;
+
+        
+    
+    
+            circle_marker_3197d3b8c00c450dd7a66a74b2576a5e.bindTooltip(
+                `<div>
+                     Götzis
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_605437fb24a7e812149e5479e45cd908 = L.circleMarker(
+                [46.6185409218168, 13.8489045290149],
+                {"bubblingMouseEvents": true, "color": "#ff1100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff1100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.8682, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c112f6aa2cc773c788d2ce747a31b3ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6cfbaf8895c2159d54d0621f3db18f6 = $(`<div id="html_a6cfbaf8895c2159d54d0621f3db18f6" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Villach Hbf<br><b>Average Delay:</b> 32.49 minutes<br><b>Station Count:</b> 7763</div>`)[0];
+                popup_c112f6aa2cc773c788d2ce747a31b3ae.setContent(html_a6cfbaf8895c2159d54d0621f3db18f6);
+            
+        
+
+        circle_marker_605437fb24a7e812149e5479e45cd908.bindPopup(popup_c112f6aa2cc773c788d2ce747a31b3ae)
+        ;
+
+        
+    
+    
+            circle_marker_605437fb24a7e812149e5479e45cd908.bindTooltip(
+                `<div>
+                     Villach Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bbfe43003c0856c7c52ee267d57399a = L.circleMarker(
+                [47.2408932201416, 9.60394260277573],
+                {"bubblingMouseEvents": true, "color": "#ff1b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff1b00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.8634, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_311a388aa70f6ad94619f1a25ebbed1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_906e2c85868783e63167d59afc550922 = $(`<div id="html_906e2c85868783e63167d59afc550922" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Feldkirch<br><b>Average Delay:</b> 31.67 minutes<br><b>Station Count:</b> 6331</div>`)[0];
+                popup_311a388aa70f6ad94619f1a25ebbed1f.setContent(html_906e2c85868783e63167d59afc550922);
+            
+        
+
+        circle_marker_9bbfe43003c0856c7c52ee267d57399a.bindPopup(popup_311a388aa70f6ad94619f1a25ebbed1f)
+        ;
+
+        
+    
+    
+            circle_marker_9bbfe43003c0856c7c52ee267d57399a.bindTooltip(
+                `<div>
+                     Feldkirch
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e46a202d5eb5fe9bfb8232e8b16401d = L.circleMarker(
+                [48.2906764721424, 14.291172092907],
+                {"bubblingMouseEvents": true, "color": "#ff2000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8792, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_79f5c48784ff7700ec5e0554be1f5b5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6d2a63ebf740ac9c5f5e2fbed2cc29b = $(`<div id="html_c6d2a63ebf740ac9c5f5e2fbed2cc29b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> LinzHbf<br><b>Average Delay:</b> 31.27 minutes<br><b>Station Count:</b> 628</div>`)[0];
+                popup_79f5c48784ff7700ec5e0554be1f5b5a.setContent(html_c6d2a63ebf740ac9c5f5e2fbed2cc29b);
+            
+        
+
+        circle_marker_5e46a202d5eb5fe9bfb8232e8b16401d.bindPopup(popup_79f5c48784ff7700ec5e0554be1f5b5a)
+        ;
+
+        
+    
+    
+            circle_marker_5e46a202d5eb5fe9bfb8232e8b16401d.bindTooltip(
+                `<div>
+                     LinzHbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d87526d340df1772e38927c9a6ef5b43 = L.circleMarker(
+                [47.3647554015789, 9.68114381830371],
+                {"bubblingMouseEvents": true, "color": "#ff2800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.2394, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_82652682d43417cd092e7d1694e56a78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_930f91ba2400db65c7d9dc379aedbffa = $(`<div id="html_930f91ba2400db65c7d9dc379aedbffa" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Hohenems<br><b>Average Delay:</b> 30.53 minutes<br><b>Station Count:</b> 171</div>`)[0];
+                popup_82652682d43417cd092e7d1694e56a78.setContent(html_930f91ba2400db65c7d9dc379aedbffa);
+            
+        
+
+        circle_marker_d87526d340df1772e38927c9a6ef5b43.bindPopup(popup_82652682d43417cd092e7d1694e56a78)
+        ;
+
+        
+    
+    
+            circle_marker_d87526d340df1772e38927c9a6ef5b43.bindTooltip(
+                `<div>
+                     Hohenems
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b99e061055fbb3857ce9ea0a397aeb52 = L.circleMarker(
+                [47.1547750964851, 9.81448973909697],
+                {"bubblingMouseEvents": true, "color": "#ff2900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2900ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.2918, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_79840a587b819fe0993844b6410570b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0bd648225f1d27bf8be03aa964dda24 = $(`<div id="html_a0bd648225f1d27bf8be03aa964dda24" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Bludenz<br><b>Average Delay:</b> 30.45 minutes<br><b>Station Count:</b> 6637</div>`)[0];
+                popup_79840a587b819fe0993844b6410570b7.setContent(html_a0bd648225f1d27bf8be03aa964dda24);
+            
+        
+
+        circle_marker_b99e061055fbb3857ce9ea0a397aeb52.bindPopup(popup_79840a587b819fe0993844b6410570b7)
+        ;
+
+        
+    
+    
+            circle_marker_b99e061055fbb3857ce9ea0a397aeb52.bindTooltip(
+                `<div>
+                     Bludenz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b6ed9c790533ccec59423a8dd421fc5 = L.circleMarker(
+                [48.1657011139022, 14.0262409492776],
+                {"bubblingMouseEvents": true, "color": "#ff2b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2b00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.0354, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_2479ab98e328ed434e13cf19a7fd6865 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c87c50b99b46eef2d7cb8cbd4ac36c8e = $(`<div id="html_c87c50b99b46eef2d7cb8cbd4ac36c8e" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Wels Hbf<br><b>Average Delay:</b> 30.30 minutes<br><b>Station Count:</b> 9311</div>`)[0];
+                popup_2479ab98e328ed434e13cf19a7fd6865.setContent(html_c87c50b99b46eef2d7cb8cbd4ac36c8e);
+            
+        
+
+        circle_marker_7b6ed9c790533ccec59423a8dd421fc5.bindPopup(popup_2479ab98e328ed434e13cf19a7fd6865)
+        ;
+
+        
+    
+    
+            circle_marker_7b6ed9c790533ccec59423a8dd421fc5.bindTooltip(
+                `<div>
+                     Wels Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aee2e5a804c2207879093eb6db179070 = L.circleMarker(
+                [47.3005852940121, 11.0787966364485],
+                {"bubblingMouseEvents": true, "color": "#ff2e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1932, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_32b2df464bd869f17cbc217576a3e880 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2661b7049e4674727c2c29357095e9e9 = $(`<div id="html_2661b7049e4674727c2c29357095e9e9" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Telfs-Pfaffenhofen<br><b>Average Delay:</b> 30.07 minutes<br><b>Station Count:</b> 138</div>`)[0];
+                popup_32b2df464bd869f17cbc217576a3e880.setContent(html_2661b7049e4674727c2c29357095e9e9);
+            
+        
+
+        circle_marker_aee2e5a804c2207879093eb6db179070.bindPopup(popup_32b2df464bd869f17cbc217576a3e880)
+        ;
+
+        
+    
+    
+            circle_marker_aee2e5a804c2207879093eb6db179070.bindTooltip(
+                `<div>
+                     Telfs-Pfaffenhofen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9eec65428fcd180c537dfedbaddb925 = L.circleMarker(
+                [47.2715126374725, 9.63794383628439],
+                {"bubblingMouseEvents": true, "color": "#ff3600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.2226, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_dc7b44f501b77596c62d425c56e28bee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61e7721044810f544fedace6e52bedc3 = $(`<div id="html_61e7721044810f544fedace6e52bedc3" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Rankweil<br><b>Average Delay:</b> 29.32 minutes<br><b>Station Count:</b> 159</div>`)[0];
+                popup_dc7b44f501b77596c62d425c56e28bee.setContent(html_61e7721044810f544fedace6e52bedc3);
+            
+        
+
+        circle_marker_f9eec65428fcd180c537dfedbaddb925.bindPopup(popup_dc7b44f501b77596c62d425c56e28bee)
+        ;
+
+        
+    
+    
+            circle_marker_f9eec65428fcd180c537dfedbaddb925.bindTooltip(
+                `<div>
+                     Rankweil
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2551c25a75aa5772d2c8c1696b02e485 = L.circleMarker(
+                [47.4176036145207, 9.73840243452146],
+                {"bubblingMouseEvents": true, "color": "#ff3700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.71, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_b8cd4661f623972a4cde1dcee197a3e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_589d2bf89704458589f86922423df446 = $(`<div id="html_589d2bf89704458589f86922423df446" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Dornbirn<br><b>Average Delay:</b> 29.29 minutes<br><b>Station Count:</b> 2650</div>`)[0];
+                popup_b8cd4661f623972a4cde1dcee197a3e6.setContent(html_589d2bf89704458589f86922423df446);
+            
+        
+
+        circle_marker_2551c25a75aa5772d2c8c1696b02e485.bindPopup(popup_b8cd4661f623972a4cde1dcee197a3e6)
+        ;
+
+        
+    
+    
+            circle_marker_2551c25a75aa5772d2c8c1696b02e485.bindTooltip(
+                `<div>
+                     Dornbirn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5c7d3349e956594899d61b45e93f129 = L.circleMarker(
+                [47.3189127774114, 13.1543541006955],
+                {"bubblingMouseEvents": true, "color": "#ff3800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.9122, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_5d0bf9ee21d58f57cbabd15d57794c15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45d0c28ba5597c5b4f37d9904c9824b5 = $(`<div id="html_45d0c28ba5597c5b4f37d9904c9824b5" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Schwarzach-St.Veit<br><b>Average Delay:</b> 29.21 minutes<br><b>Station Count:</b> 4223</div>`)[0];
+                popup_5d0bf9ee21d58f57cbabd15d57794c15.setContent(html_45d0c28ba5597c5b4f37d9904c9824b5);
+            
+        
+
+        circle_marker_b5c7d3349e956594899d61b45e93f129.bindPopup(popup_5d0bf9ee21d58f57cbabd15d57794c15)
+        ;
+
+        
+    
+    
+            circle_marker_b5c7d3349e956594899d61b45e93f129.bindTooltip(
+                `<div>
+                     Schwarzach-St.Veit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_777bef66d0da804f1a9e400be9028d74 = L.circleMarker(
+                [47.1274070697568, 10.2672316592034],
+                {"bubblingMouseEvents": true, "color": "#ff4500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4500ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8072, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_42a69311a4bf1de01b9c10dc51bfd490 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70ce33b3e34d8c59de0f81542828318e = $(`<div id="html_70ce33b3e34d8c59de0f81542828318e" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St. Anton am Arlberg<br><b>Average Delay:</b> 28.08 minutes<br><b>Station Count:</b> 4148</div>`)[0];
+                popup_42a69311a4bf1de01b9c10dc51bfd490.setContent(html_70ce33b3e34d8c59de0f81542828318e);
+            
+        
+
+        circle_marker_777bef66d0da804f1a9e400be9028d74.bindPopup(popup_42a69311a4bf1de01b9c10dc51bfd490)
+        ;
+
+        
+    
+    
+            circle_marker_777bef66d0da804f1a9e400be9028d74.bindTooltip(
+                `<div>
+                     St. Anton am Arlberg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c85365925c4792d6e45285da7fe33489 = L.circleMarker(
+                [47.3864180226965, 15.0897384479891],
+                {"bubblingMouseEvents": true, "color": "#ff4700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.438, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_6c86d121285a572d8c43617e11ad8e59 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c666f99a2f7e3cc80c4f097bee5fcdbf = $(`<div id="html_c666f99a2f7e3cc80c4f097bee5fcdbf" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Leoben Hbf<br><b>Average Delay:</b> 27.90 minutes<br><b>Station Count:</b> 8170</div>`)[0];
+                popup_6c86d121285a572d8c43617e11ad8e59.setContent(html_c666f99a2f7e3cc80c4f097bee5fcdbf);
+            
+        
+
+        circle_marker_c85365925c4792d6e45285da7fe33489.bindPopup(popup_6c86d121285a572d8c43617e11ad8e59)
+        ;
+
+        
+    
+    
+            circle_marker_c85365925c4792d6e45285da7fe33489.bindTooltip(
+                `<div>
+                     Leoben Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17d86557bef41888d5b488f7232c0b55 = L.circleMarker(
+                [47.4136342381198, 15.2792021245891],
+                {"bubblingMouseEvents": true, "color": "#ff4a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4a00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.3896, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_de1e537d6a31282ef999a5b6d305eeae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44418acdefd2f3acc56d1752a70649a9 = $(`<div id="html_44418acdefd2f3acc56d1752a70649a9" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Bruck/Mur<br><b>Average Delay:</b> 27.67 minutes<br><b>Station Count:</b> 9564</div>`)[0];
+                popup_de1e537d6a31282ef999a5b6d305eeae.setContent(html_44418acdefd2f3acc56d1752a70649a9);
+            
+        
+
+        circle_marker_17d86557bef41888d5b488f7232c0b55.bindPopup(popup_de1e537d6a31282ef999a5b6d305eeae)
+        ;
+
+        
+    
+    
+            circle_marker_17d86557bef41888d5b488f7232c0b55.bindTooltip(
+                `<div>
+                     Bruck/Mur
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_628f6b2e38f1bef7b509f64af4ff1db0 = L.circleMarker(
+                [47.1314713087892, 10.1215518695575],
+                {"bubblingMouseEvents": true, "color": "#ff4a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4a00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0232, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_1f5316b96d7823b991a68f1b6d1c4fae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0068bed935c91567b8b36496830bca70 = $(`<div id="html_0068bed935c91567b8b36496830bca70" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Langen am Arlberg<br><b>Average Delay:</b> 27.62 minutes<br><b>Station Count:</b> 3588</div>`)[0];
+                popup_1f5316b96d7823b991a68f1b6d1c4fae.setContent(html_0068bed935c91567b8b36496830bca70);
+            
+        
+
+        circle_marker_628f6b2e38f1bef7b509f64af4ff1db0.bindPopup(popup_1f5316b96d7823b991a68f1b6d1c4fae)
+        ;
+
+        
+    
+    
+            circle_marker_628f6b2e38f1bef7b509f64af4ff1db0.bindTooltip(
+                `<div>
+                     Langen am Arlberg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f966872b6df013e433ec291f93efa6c = L.circleMarker(
+                [47.1482872337089, 10.5785338378055],
+                {"bubblingMouseEvents": true, "color": "#ff4d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4d00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.381, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_777941c51eca9826478829038f14ba14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5b0e736be5aa2ab009dcb608a0c4573 = $(`<div id="html_f5b0e736be5aa2ab009dcb608a0c4573" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Landeck-Zams<br><b>Average Delay:</b> 27.41 minutes<br><b>Station Count:</b> 7415</div>`)[0];
+                popup_777941c51eca9826478829038f14ba14.setContent(html_f5b0e736be5aa2ab009dcb608a0c4573);
+            
+        
+
+        circle_marker_0f966872b6df013e433ec291f93efa6c.bindPopup(popup_777941c51eca9826478829038f14ba14)
+        ;
+
+        
+    
+    
+            circle_marker_0f966872b6df013e433ec291f93efa6c.bindTooltip(
+                `<div>
+                     Landeck-Zams
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f218ecef51c7ad6c5cc08d911cb775d0 = L.circleMarker(
+                [46.7707894590548, 14.3669719365916],
+                {"bubblingMouseEvents": true, "color": "#ff5000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.3876, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_f84e40776e00938f0f7a67f6d1eb8987 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d281e87c8952014e97af78f7588fb51f = $(`<div id="html_d281e87c8952014e97af78f7588fb51f" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St.Veit/Glan<br><b>Average Delay:</b> 27.11 minutes<br><b>Station Count:</b> 3134</div>`)[0];
+                popup_f84e40776e00938f0f7a67f6d1eb8987.setContent(html_d281e87c8952014e97af78f7588fb51f);
+            
+        
+
+        circle_marker_f218ecef51c7ad6c5cc08d911cb775d0.bindPopup(popup_f84e40776e00938f0f7a67f6d1eb8987)
+        ;
+
+        
+    
+    
+            circle_marker_f218ecef51c7ad6c5cc08d911cb775d0.bindTooltip(
+                `<div>
+                     St.Veit/Glan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb16693df7072cbb6fcc900bd67c12f9 = L.circleMarker(
+                [46.8681666574154, 14.4655081401204],
+                {"bubblingMouseEvents": true, "color": "#ff5400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5400ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4724, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_78f3e95bbe822a659768c0fc155973ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d49c1cff54c58f156fd854b99ea726b8 = $(`<div id="html_d49c1cff54c58f156fd854b99ea726b8" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Treibach-Althofen<br><b>Average Delay:</b> 26.79 minutes<br><b>Station Count:</b> 1766</div>`)[0];
+                popup_78f3e95bbe822a659768c0fc155973ce.setContent(html_d49c1cff54c58f156fd854b99ea726b8);
+            
+        
+
+        circle_marker_cb16693df7072cbb6fcc900bd67c12f9.bindPopup(popup_78f3e95bbe822a659768c0fc155973ce)
+        ;
+
+        
+    
+    
+            circle_marker_cb16693df7072cbb6fcc900bd67c12f9.bindTooltip(
+                `<div>
+                     Treibach-Althofen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8fe8dc8ad4439ccf2fb0528c6f339b8 = L.circleMarker(
+                [46.6272585707935, 14.222810299776],
+                {"bubblingMouseEvents": true, "color": "#ff5400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5400ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1858, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_3ec6dca9fc5f680cd050fedc1c92aa62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4698a52a45b0539600ed3204f48dd273 = $(`<div id="html_4698a52a45b0539600ed3204f48dd273" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Krumpendorf/Wörthersee<br><b>Average Delay:</b> 26.75 minutes<br><b>Station Count:</b> 847</div>`)[0];
+                popup_3ec6dca9fc5f680cd050fedc1c92aa62.setContent(html_4698a52a45b0539600ed3204f48dd273);
+            
+        
+
+        circle_marker_c8fe8dc8ad4439ccf2fb0528c6f339b8.bindPopup(popup_3ec6dca9fc5f680cd050fedc1c92aa62)
+        ;
+
+        
+    
+    
+            circle_marker_c8fe8dc8ad4439ccf2fb0528c6f339b8.bindTooltip(
+                `<div>
+                     Krumpendorf/Wörthersee
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db2e93b5da2f2be4ebb0c4933b4b3011 = L.circleMarker(
+                [46.6197255679974, 14.044467766395],
+                {"bubblingMouseEvents": true, "color": "#ff5600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4495999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_3a43be54f5dd293233f3051b12d7bd6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac71e698bf7c4f4d7e79a7c3017532be = $(`<div id="html_ac71e698bf7c4f4d7e79a7c3017532be" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Velden am Wörther See<br><b>Average Delay:</b> 26.58 minutes<br><b>Station Count:</b> 2464</div>`)[0];
+                popup_3a43be54f5dd293233f3051b12d7bd6f.setContent(html_ac71e698bf7c4f4d7e79a7c3017532be);
+            
+        
+
+        circle_marker_db2e93b5da2f2be4ebb0c4933b4b3011.bindPopup(popup_3a43be54f5dd293233f3051b12d7bd6f)
+        ;
+
+        
+    
+    
+            circle_marker_db2e93b5da2f2be4ebb0c4933b4b3011.bindTooltip(
+                `<div>
+                     Velden am Wörther See
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62fde1cc0fc2b7b93ef14d6ba646b78e = L.circleMarker(
+                [48.1746517396117, 16.3339051166678],
+                {"bubblingMouseEvents": true, "color": "#ff5600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 44.6138, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_37f15e83fb09a3e0c79eaec79c5ed2be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d59da7a0ff73f1b9a1c086eb5f2d1762 = $(`<div id="html_d59da7a0ff73f1b9a1c086eb5f2d1762" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Wien Meidling<br><b>Average Delay:</b> 26.58 minutes<br><b>Station Count:</b> 31867</div>`)[0];
+                popup_37f15e83fb09a3e0c79eaec79c5ed2be.setContent(html_d59da7a0ff73f1b9a1c086eb5f2d1762);
+            
+        
+
+        circle_marker_62fde1cc0fc2b7b93ef14d6ba646b78e.bindPopup(popup_37f15e83fb09a3e0c79eaec79c5ed2be)
+        ;
+
+        
+    
+    
+            circle_marker_62fde1cc0fc2b7b93ef14d6ba646b78e.bindTooltip(
+                `<div>
+                     Wien Meidling
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cce6fca3ecd982075d1381f1d21e6929 = L.circleMarker(
+                [48.1853317334923, 16.378650200976],
+                {"bubblingMouseEvents": true, "color": "#ff5700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 47.3354, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_3a029e52885b9efb4170648c8bc79367 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b8fa10d0d3b014ea271dfc82015be38 = $(`<div id="html_9b8fa10d0d3b014ea271dfc82015be38" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Wien Hbf<br><b>Average Delay:</b> 26.52 minutes<br><b>Station Count:</b> 33811</div>`)[0];
+                popup_3a029e52885b9efb4170648c8bc79367.setContent(html_9b8fa10d0d3b014ea271dfc82015be38);
+            
+        
+
+        circle_marker_cce6fca3ecd982075d1381f1d21e6929.bindPopup(popup_3a029e52885b9efb4170648c8bc79367)
+        ;
+
+        
+    
+    
+            circle_marker_cce6fca3ecd982075d1381f1d21e6929.bindTooltip(
+                `<div>
+                     Wien Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a10bdb0f01414117be0d6ba6b0feb86 = L.circleMarker(
+                [47.09978035, 15.70849802],
+                {"bubblingMouseEvents": true, "color": "#ff5700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.336, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_826f831b5dca7cdd20bf1ef3f07add77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcee488cbff9bdbc53a90592fc472a33 = $(`<div id="html_bcee488cbff9bdbc53a90592fc472a33" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Gleisdorf<br><b>Average Delay:</b> 26.52 minutes<br><b>Station Count:</b> 240</div>`)[0];
+                popup_826f831b5dca7cdd20bf1ef3f07add77.setContent(html_bcee488cbff9bdbc53a90592fc472a33);
+            
+        
+
+        circle_marker_4a10bdb0f01414117be0d6ba6b0feb86.bindPopup(popup_826f831b5dca7cdd20bf1ef3f07add77)
+        ;
+
+        
+    
+    
+            circle_marker_4a10bdb0f01414117be0d6ba6b0feb86.bindTooltip(
+                `<div>
+                     Gleisdorf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86fef12771d777bcc669453c3bdb8652 = L.circleMarker(
+                [48.1215422172551, 14.8785355415103],
+                {"bubblingMouseEvents": true, "color": "#ff5800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.7066, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_0df2420c2b6282dc8e0fec6d3b8fc308 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3babcf854246fc80a35e99174faa42c3 = $(`<div id="html_3babcf854246fc80a35e99174faa42c3" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Amstetten NÖ<br><b>Average Delay:</b> 26.40 minutes<br><b>Station Count:</b> 6219</div>`)[0];
+                popup_0df2420c2b6282dc8e0fec6d3b8fc308.setContent(html_3babcf854246fc80a35e99174faa42c3);
+            
+        
+
+        circle_marker_86fef12771d777bcc669453c3bdb8652.bindPopup(popup_0df2420c2b6282dc8e0fec6d3b8fc308)
+        ;
+
+        
+    
+    
+            circle_marker_86fef12771d777bcc669453c3bdb8652.bindTooltip(
+                `<div>
+                     Amstetten NÖ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c13ff3de265500421bef2302d596c5b7 = L.circleMarker(
+                [47.2631980039047, 11.4008246995445],
+                {"bubblingMouseEvents": true, "color": "#ff5b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5b00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.686799999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_d9195fc16dbb564d05e1e24a03fec432 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2b115eb5836373dc0ace517031ba365 = $(`<div id="html_c2b115eb5836373dc0ace517031ba365" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Innsbruck Hbf<br><b>Average Delay:</b> 26.13 minutes<br><b>Station Count:</b> 14062</div>`)[0];
+                popup_d9195fc16dbb564d05e1e24a03fec432.setContent(html_c2b115eb5836373dc0ace517031ba365);
+            
+        
+
+        circle_marker_c13ff3de265500421bef2302d596c5b7.bindPopup(popup_d9195fc16dbb564d05e1e24a03fec432)
+        ;
+
+        
+    
+    
+            circle_marker_c13ff3de265500421bef2302d596c5b7.bindTooltip(
+                `<div>
+                     Innsbruck Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7fc104541244614154905908aca96985 = L.circleMarker(
+                [47.2154733449547, 14.8380844042608],
+                {"bubblingMouseEvents": true, "color": "#ff5c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.6354, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_72ca5edbcf7a854df265997a8eb72690 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9500458c2543bc926a15c5dbea5975aa = $(`<div id="html_9500458c2543bc926a15c5dbea5975aa" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Knittelfeld<br><b>Average Delay:</b> 26.12 minutes<br><b>Station Count:</b> 3311</div>`)[0];
+                popup_72ca5edbcf7a854df265997a8eb72690.setContent(html_9500458c2543bc926a15c5dbea5975aa);
+            
+        
+
+        circle_marker_7fc104541244614154905908aca96985.bindPopup(popup_72ca5edbcf7a854df265997a8eb72690)
+        ;
+
+        
+    
+    
+            circle_marker_7fc104541244614154905908aca96985.bindTooltip(
+                `<div>
+                     Knittelfeld
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_276eb128ac2a17e11db8d696a1c4818a = L.circleMarker(
+                [46.9529212252206, 14.4105402278775],
+                {"bubblingMouseEvents": true, "color": "#ff5c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1728, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_ca56091f443377f833f2581a6fc3171e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbb07ec719a4b174ab2caa1de484414e = $(`<div id="html_fbb07ec719a4b174ab2caa1de484414e" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Friesach in Kärnten<br><b>Average Delay:</b> 26.06 minutes<br><b>Station Count:</b> 1552</div>`)[0];
+                popup_ca56091f443377f833f2581a6fc3171e.setContent(html_fbb07ec719a4b174ab2caa1de484414e);
+            
+        
+
+        circle_marker_276eb128ac2a17e11db8d696a1c4818a.bindPopup(popup_ca56091f443377f833f2581a6fc3171e)
+        ;
+
+        
+    
+    
+            circle_marker_276eb128ac2a17e11db8d696a1c4818a.bindTooltip(
+                `<div>
+                     Friesach in Kärnten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97152f0676c0312d45023e9da8ad5613 = L.circleMarker(
+                [47.8110038155515, 16.2333656700552],
+                {"bubblingMouseEvents": true, "color": "#ff5d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5d00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.1008, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_1a9fd30faba11c9338fa911ca5f5fe90 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2d4b73a41175c4a0637209bb4123f84 = $(`<div id="html_b2d4b73a41175c4a0637209bb4123f84" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Wiener Neustadt Hbf<br><b>Average Delay:</b> 26.00 minutes<br><b>Station Count:</b> 10072</div>`)[0];
+                popup_1a9fd30faba11c9338fa911ca5f5fe90.setContent(html_b2d4b73a41175c4a0637209bb4123f84);
+            
+        
+
+        circle_marker_97152f0676c0312d45023e9da8ad5613.bindPopup(popup_1a9fd30faba11c9338fa911ca5f5fe90)
+        ;
+
+        
+    
+    
+            circle_marker_97152f0676c0312d45023e9da8ad5613.bindTooltip(
+                `<div>
+                     Wiener Neustadt Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9900aa4059280b969e920407c4140a6b = L.circleMarker(
+                [48.2083253984462, 15.6246402839925],
+                {"bubblingMouseEvents": true, "color": "#ff5e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35.0112, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_9291a8f34b84ab1a7ee207d2b1bb2934 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7af4c7dd5e1cb183d139f14cd30ec0a8 = $(`<div id="html_7af4c7dd5e1cb183d139f14cd30ec0a8" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St.Pölten Hbf<br><b>Average Delay:</b> 25.92 minutes<br><b>Station Count:</b> 25008</div>`)[0];
+                popup_9291a8f34b84ab1a7ee207d2b1bb2934.setContent(html_7af4c7dd5e1cb183d139f14cd30ec0a8);
+            
+        
+
+        circle_marker_9900aa4059280b969e920407c4140a6b.bindPopup(popup_9291a8f34b84ab1a7ee207d2b1bb2934)
+        ;
+
+        
+    
+    
+            circle_marker_9900aa4059280b969e920407c4140a6b.bindTooltip(
+                `<div>
+                     St.Pölten Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_676771471f7f3051e4408e14d5399ed9 = L.circleMarker(
+                [48.2906764721424, 14.291172092907],
+                {"bubblingMouseEvents": true, "color": "#ff5e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 36.4098, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_7dfa1ed99f1803059fe0345afed0ab28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1e0dc53cfcfd514b389fff51035e5c9 = $(`<div id="html_e1e0dc53cfcfd514b389fff51035e5c9" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Linz Hbf<br><b>Average Delay:</b> 25.92 minutes<br><b>Station Count:</b> 26007</div>`)[0];
+                popup_7dfa1ed99f1803059fe0345afed0ab28.setContent(html_e1e0dc53cfcfd514b389fff51035e5c9);
+            
+        
+
+        circle_marker_676771471f7f3051e4408e14d5399ed9.bindPopup(popup_7dfa1ed99f1803059fe0345afed0ab28)
+        ;
+
+        
+    
+    
+            circle_marker_676771471f7f3051e4408e14d5399ed9.bindTooltip(
+                `<div>
+                     Linz Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e40be8e7f9240de3616bbf9be69c316 = L.circleMarker(
+                [46.6358946304994, 14.1463457027811],
+                {"bubblingMouseEvents": true, "color": "#ff5e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.339, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_746e59a04f6aaf3430a758106cbe579f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a8fad73bd9be970dbc5f264acbd6c6c = $(`<div id="html_5a8fad73bd9be970dbc5f264acbd6c6c" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Pörtschach am Wörther See<br><b>Average Delay:</b> 25.90 minutes<br><b>Station Count:</b> 2385</div>`)[0];
+                popup_746e59a04f6aaf3430a758106cbe579f.setContent(html_5a8fad73bd9be970dbc5f264acbd6c6c);
+            
+        
+
+        circle_marker_7e40be8e7f9240de3616bbf9be69c316.bindPopup(popup_746e59a04f6aaf3430a758106cbe579f)
+        ;
+
+        
+    
+    
+            circle_marker_7e40be8e7f9240de3616bbf9be69c316.bindTooltip(
+                `<div>
+                     Pörtschach am Wörther See
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8690398196f8132ce1e6ffad5ed71610 = L.circleMarker(
+                [46.9350928472094, 16.1389796831396],
+                {"bubblingMouseEvents": true, "color": "#ff5e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.3892, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_5a76c4416b4cf1e73a206b7466dd5dd3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d71d8588fb4c0bd322b6d35487f7857 = $(`<div id="html_1d71d8588fb4c0bd322b6d35487f7857" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Jennersdorf<br><b>Average Delay:</b> 25.88 minutes<br><b>Station Count:</b> 278</div>`)[0];
+                popup_5a76c4416b4cf1e73a206b7466dd5dd3.setContent(html_1d71d8588fb4c0bd322b6d35487f7857);
+            
+        
+
+        circle_marker_8690398196f8132ce1e6ffad5ed71610.bindPopup(popup_5a76c4416b4cf1e73a206b7466dd5dd3)
+        ;
+
+        
+    
+    
+            circle_marker_8690398196f8132ce1e6ffad5ed71610.bindTooltip(
+                `<div>
+                     Jennersdorf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5b38a418f2bd83b0b337ceff7ef7a2a = L.circleMarker(
+                [47.2010712718855, 14.4430053422501],
+                {"bubblingMouseEvents": true, "color": "#ff5f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5f00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.8364, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_4b3125dec48eb4d438471218405cbf5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17c0980e5a953b4cdbda30e7e63bc4f7 = $(`<div id="html_17c0980e5a953b4cdbda30e7e63bc4f7" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Unzmarkt<br><b>Average Delay:</b> 25.83 minutes<br><b>Station Count:</b> 2026</div>`)[0];
+                popup_4b3125dec48eb4d438471218405cbf5b.setContent(html_17c0980e5a953b4cdbda30e7e63bc4f7);
+            
+        
+
+        circle_marker_a5b38a418f2bd83b0b337ceff7ef7a2a.bindPopup(popup_4b3125dec48eb4d438471218405cbf5b)
+        ;
+
+        
+    
+    
+            circle_marker_a5b38a418f2bd83b0b337ceff7ef7a2a.bindTooltip(
+                `<div>
+                     Unzmarkt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fa2e7797836cf1085a6b6fb5c78ec34 = L.circleMarker(
+                [47.3882973419045, 11.7775871129095],
+                {"bubblingMouseEvents": true, "color": "#ff6000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.8432, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_1730065a7a2d906461bf30632b7e9345 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3dd41d0de05880479fa882b7a0283be9 = $(`<div id="html_3dd41d0de05880479fa882b7a0283be9" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Jenbach<br><b>Average Delay:</b> 25.76 minutes<br><b>Station Count:</b> 9888</div>`)[0];
+                popup_1730065a7a2d906461bf30632b7e9345.setContent(html_3dd41d0de05880479fa882b7a0283be9);
+            
+        
+
+        circle_marker_6fa2e7797836cf1085a6b6fb5c78ec34.bindPopup(popup_1730065a7a2d906461bf30632b7e9345)
+        ;
+
+        
+    
+    
+            circle_marker_6fa2e7797836cf1085a6b6fb5c78ec34.bindTooltip(
+                `<div>
+                     Jenbach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f1c6716b2d8f97f4d44252248c60061 = L.circleMarker(
+                [47.07375448, 15.41681504],
+                {"bubblingMouseEvents": true, "color": "#ff6000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4158, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_329c8f211d37845b8ee83530bd0c9231 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c674277ed0b3baffbea20414894e79bf = $(`<div id="html_c674277ed0b3baffbea20414894e79bf" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Graz Ostbahnhof-Messe<br><b>Average Delay:</b> 25.75 minutes<br><b>Station Count:</b> 297</div>`)[0];
+                popup_329c8f211d37845b8ee83530bd0c9231.setContent(html_c674277ed0b3baffbea20414894e79bf);
+            
+        
+
+        circle_marker_8f1c6716b2d8f97f4d44252248c60061.bindPopup(popup_329c8f211d37845b8ee83530bd0c9231)
+        ;
+
+        
+    
+    
+            circle_marker_8f1c6716b2d8f97f4d44252248c60061.bindTooltip(
+                `<div>
+                     Graz Ostbahnhof-Messe
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b23e672387c391986d8909e2d2c0fd1 = L.circleMarker(
+                [47.1749056423694, 14.6635597108378],
+                {"bubblingMouseEvents": true, "color": "#ff6100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.8205999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_ad3b845bc0c1cd212f88391096cb19ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39db60dc0000f13fdba0988e3864a628 = $(`<div id="html_39db60dc0000f13fdba0988e3864a628" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Judenburg<br><b>Average Delay:</b> 25.66 minutes<br><b>Station Count:</b> 2729</div>`)[0];
+                popup_ad3b845bc0c1cd212f88391096cb19ab.setContent(html_39db60dc0000f13fdba0988e3864a628);
+            
+        
+
+        circle_marker_7b23e672387c391986d8909e2d2c0fd1.bindPopup(popup_ad3b845bc0c1cd212f88391096cb19ab)
+        ;
+
+        
+    
+    
+            circle_marker_7b23e672387c391986d8909e2d2c0fd1.bindTooltip(
+                `<div>
+                     Judenburg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a9da8a60e0ebcd774de374641e9327e = L.circleMarker(
+                [47.07375448, 15.41681504],
+                {"bubblingMouseEvents": true, "color": "#ff6400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6400ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.1098, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_4b8517873b5e9ed74a3be979187f26dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5afba88488c24d0b813caa2979b2dd91 = $(`<div id="html_5afba88488c24d0b813caa2979b2dd91" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Graz Hbf<br><b>Average Delay:</b> 25.39 minutes<br><b>Station Count:</b> 6507</div>`)[0];
+                popup_4b8517873b5e9ed74a3be979187f26dc.setContent(html_5afba88488c24d0b813caa2979b2dd91);
+            
+        
+
+        circle_marker_7a9da8a60e0ebcd774de374641e9327e.bindPopup(popup_4b8517873b5e9ed74a3be979187f26dc)
+        ;
+
+        
+    
+    
+            circle_marker_7a9da8a60e0ebcd774de374641e9327e.bindTooltip(
+                `<div>
+                     Graz Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_136d052b2c3360031d2f48f8a0c6791f = L.circleMarker(
+                [47.8130730557826, 13.0453076083411],
+                {"bubblingMouseEvents": true, "color": "#ff6600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.0818, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c83dc10b66aa714274e7d4564c34262d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fb49c6f81769b683b835999eb0d9905 = $(`<div id="html_0fb49c6f81769b683b835999eb0d9905" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Salzburg Süd<br><b>Average Delay:</b> 25.25 minutes<br><b>Station Count:</b> 1487</div>`)[0];
+                popup_c83dc10b66aa714274e7d4564c34262d.setContent(html_0fb49c6f81769b683b835999eb0d9905);
+            
+        
+
+        circle_marker_136d052b2c3360031d2f48f8a0c6791f.bindPopup(popup_c83dc10b66aa714274e7d4564c34262d)
+        ;
+
+        
+    
+    
+            circle_marker_136d052b2c3360031d2f48f8a0c6791f.bindTooltip(
+                `<div>
+                     Salzburg Süd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f180858010d67c89e89eead04d72e48c = L.circleMarker(
+                [47.5821385910481, 12.1657671135372],
+                {"bubblingMouseEvents": true, "color": "#ff6700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.0566, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_a6a3b8749a7e54dd13402eb2d928c9e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ad2ed0ee384f35c50f2bb236d0e9d99 = $(`<div id="html_7ad2ed0ee384f35c50f2bb236d0e9d99" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kufstein<br><b>Average Delay:</b> 25.11 minutes<br><b>Station Count:</b> 11469</div>`)[0];
+                popup_a6a3b8749a7e54dd13402eb2d928c9e4.setContent(html_7ad2ed0ee384f35c50f2bb236d0e9d99);
+            
+        
+
+        circle_marker_f180858010d67c89e89eead04d72e48c.bindPopup(popup_a6a3b8749a7e54dd13402eb2d928c9e4)
+        ;
+
+        
+    
+    
+            circle_marker_f180858010d67c89e89eead04d72e48c.bindTooltip(
+                `<div>
+                     Kufstein
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d745eb745eb2a1d9c403c96d0916ef37 = L.circleMarker(
+                [47.68507174, 13.09955687],
+                {"bubblingMouseEvents": true, "color": "#ff6a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6a00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.8718, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_a63f0ecc559f7250c558f84a878cb8e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d745e8f41057b0817c7dcf2c6ffa386 = $(`<div id="html_0d745e8f41057b0817c7dcf2c6ffa386" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Hallein<br><b>Average Delay:</b> 24.90 minutes<br><b>Station Count:</b> 1337</div>`)[0];
+                popup_a63f0ecc559f7250c558f84a878cb8e1.setContent(html_0d745e8f41057b0817c7dcf2c6ffa386);
+            
+        
+
+        circle_marker_d745eb745eb2a1d9c403c96d0916ef37.bindPopup(popup_a63f0ecc559f7250c558f84a878cb8e1)
+        ;
+
+        
+    
+    
+            circle_marker_d745eb745eb2a1d9c403c96d0916ef37.bindTooltip(
+                `<div>
+                     Hallein
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66d1c1e6fe08de1afabad961d8a22977 = L.circleMarker(
+                [46.98108985089, 13.1762819767839],
+                {"bubblingMouseEvents": true, "color": "#ff6b00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6b00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.2763999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_51da9f74b1745c03abf8bc6a0fe634a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ebb687d86de946b47bbabefb5298769a = $(`<div id="html_ebb687d86de946b47bbabefb5298769a" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Mallnitz-Obervellach<br><b>Average Delay:</b> 24.79 minutes<br><b>Station Count:</b> 1626</div>`)[0];
+                popup_51da9f74b1745c03abf8bc6a0fe634a0.setContent(html_ebb687d86de946b47bbabefb5298769a);
+            
+        
+
+        circle_marker_66d1c1e6fe08de1afabad961d8a22977.bindPopup(popup_51da9f74b1745c03abf8bc6a0fe634a0)
+        ;
+
+        
+    
+    
+            circle_marker_66d1c1e6fe08de1afabad961d8a22977.bindTooltip(
+                `<div>
+                     Mallnitz-Obervellach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab7ae9eca257a8a73ba7d06da775eba1 = L.circleMarker(
+                [47.4729673789094, 13.1948860863207],
+                {"bubblingMouseEvents": true, "color": "#ff6c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.9194, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_624565681d862d275c0ba521a501ed2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd3f2d570dd0d1fba525c117d20b701b = $(`<div id="html_bd3f2d570dd0d1fba525c117d20b701b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Werfen<br><b>Average Delay:</b> 24.74 minutes<br><b>Station Count:</b> 1371</div>`)[0];
+                popup_624565681d862d275c0ba521a501ed2f.setContent(html_bd3f2d570dd0d1fba525c117d20b701b);
+            
+        
+
+        circle_marker_ab7ae9eca257a8a73ba7d06da775eba1.bindPopup(popup_624565681d862d275c0ba521a501ed2f)
+        ;
+
+        
+    
+    
+            circle_marker_ab7ae9eca257a8a73ba7d06da775eba1.bindTooltip(
+                `<div>
+                     Werfen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_444d77ad3bcba7e67f7b45b916f1e207 = L.circleMarker(
+                [46.5645935721428, 13.9124064364582],
+                {"bubblingMouseEvents": true, "color": "#ff6d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6d00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.6362, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_892cf57b9387a1557702f78bcc63622a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_262fb7e60e018f328d73f32ec1a30558 = $(`<div id="html_262fb7e60e018f328d73f32ec1a30558" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Faak am See<br><b>Average Delay:</b> 24.66 minutes<br><b>Station Count:</b> 1883</div>`)[0];
+                popup_892cf57b9387a1557702f78bcc63622a.setContent(html_262fb7e60e018f328d73f32ec1a30558);
+            
+        
+
+        circle_marker_444d77ad3bcba7e67f7b45b916f1e207.bindPopup(popup_892cf57b9387a1557702f78bcc63622a)
+        ;
+
+        
+    
+    
+            circle_marker_444d77ad3bcba7e67f7b45b916f1e207.bindTooltip(
+                `<div>
+                     Faak am See
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0423b5c49333cade17fa02aa99a08634 = L.circleMarker(
+                [46.9582924928322, 15.8882149715427],
+                {"bubblingMouseEvents": true, "color": "#ff6e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.35, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_d7b7183f5953fa8344ab40b429596d85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31e858279bf26949fd5ffd525cadecb1 = $(`<div id="html_31e858279bf26949fd5ffd525cadecb1" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Feldbach/Raab<br><b>Average Delay:</b> 24.50 minutes<br><b>Station Count:</b> 250</div>`)[0];
+                popup_d7b7183f5953fa8344ab40b429596d85.setContent(html_31e858279bf26949fd5ffd525cadecb1);
+            
+        
+
+        circle_marker_0423b5c49333cade17fa02aa99a08634.bindPopup(popup_d7b7183f5953fa8344ab40b429596d85)
+        ;
+
+        
+    
+    
+            circle_marker_0423b5c49333cade17fa02aa99a08634.bindTooltip(
+                `<div>
+                     Feldbach/Raab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_660b03dac6a4196786a651e392beba6e = L.circleMarker(
+                [47.49164777, 12.06029592],
+                {"bubblingMouseEvents": true, "color": "#ff6f00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6f00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.540399999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_be0d3cf99564ac730201632999b2db18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe82945e33bdce350a096a9981eb1055 = $(`<div id="html_fe82945e33bdce350a096a9981eb1055" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Wörgl Hbf<br><b>Average Delay:</b> 24.46 minutes<br><b>Station Count:</b> 15386</div>`)[0];
+                popup_be0d3cf99564ac730201632999b2db18.setContent(html_fe82945e33bdce350a096a9981eb1055);
+            
+        
+
+        circle_marker_660b03dac6a4196786a651e392beba6e.bindPopup(popup_be0d3cf99564ac730201632999b2db18)
+        ;
+
+        
+    
+    
+            circle_marker_660b03dac6a4196786a651e392beba6e.bindTooltip(
+                `<div>
+                     Wörgl Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8f9bdd472a31b5622b6d12ae8d4f99f = L.circleMarker(
+                [47.2190915561938, 10.7618530378613],
+                {"bubblingMouseEvents": true, "color": "#ff7000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8674, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_75c0950e0673cdf782c114d10368f218 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d4094105ed06bff9440fada98574a1d = $(`<div id="html_4d4094105ed06bff9440fada98574a1d" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Imst-Pitztal<br><b>Average Delay:</b> 24.39 minutes<br><b>Station Count:</b> 4191</div>`)[0];
+                popup_75c0950e0673cdf782c114d10368f218.setContent(html_4d4094105ed06bff9440fada98574a1d);
+            
+        
+
+        circle_marker_c8f9bdd472a31b5622b6d12ae8d4f99f.bindPopup(popup_75c0950e0673cdf782c114d10368f218)
+        ;
+
+        
+    
+    
+            circle_marker_c8f9bdd472a31b5622b6d12ae8d4f99f.bindTooltip(
+                `<div>
+                     Imst-Pitztal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3513049779037a7ce3917eb6c088322a = L.circleMarker(
+                [47.41779205, 13.22011078],
+                {"bubblingMouseEvents": true, "color": "#ff7100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.497, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_976dfa866e3ecb1e03ac8fae3091b196 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7887fc9473cd5573a59ac69caa4feb1d = $(`<div id="html_7887fc9473cd5573a59ac69caa4feb1d" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Bischofshofen<br><b>Average Delay:</b> 24.28 minutes<br><b>Station Count:</b> 5355</div>`)[0];
+                popup_976dfa866e3ecb1e03ac8fae3091b196.setContent(html_7887fc9473cd5573a59ac69caa4feb1d);
+            
+        
+
+        circle_marker_3513049779037a7ce3917eb6c088322a.bindPopup(popup_976dfa866e3ecb1e03ac8fae3091b196)
+        ;
+
+        
+    
+    
+            circle_marker_3513049779037a7ce3917eb6c088322a.bindTooltip(
+                `<div>
+                     Bischofshofen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45d7ea03c37cc2897fc65aa626bc8f6e = L.circleMarker(
+                [47.60078619, 13.16400201],
+                {"bubblingMouseEvents": true, "color": "#ff7200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7200ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.2574, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_72cf1ebfc81cf0261269541a9024de34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_adda5807478225582388351b0fd48198 = $(`<div id="html_adda5807478225582388351b0fd48198" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Golling-Abtenau<br><b>Average Delay:</b> 24.15 minutes<br><b>Station Count:</b> 3041</div>`)[0];
+                popup_72cf1ebfc81cf0261269541a9024de34.setContent(html_adda5807478225582388351b0fd48198);
+            
+        
+
+        circle_marker_45d7ea03c37cc2897fc65aa626bc8f6e.bindPopup(popup_72cf1ebfc81cf0261269541a9024de34)
+        ;
+
+        
+    
+    
+            circle_marker_45d7ea03c37cc2897fc65aa626bc8f6e.bindTooltip(
+                `<div>
+                     Golling-Abtenau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6db012aeac3cb6f8d6e32dca14a6b4c2 = L.circleMarker(
+                [47.11180729, 13.13204893],
+                {"bubblingMouseEvents": true, "color": "#ff7300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7300ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.163, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_d95fca7f14eb637401a07027a15849b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3de0f8099d269d0399ca653074449ca2 = $(`<div id="html_3de0f8099d269d0399ca653074449ca2" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Bad Gastein<br><b>Average Delay:</b> 24.13 minutes<br><b>Station Count:</b> 1545</div>`)[0];
+                popup_d95fca7f14eb637401a07027a15849b7.setContent(html_3de0f8099d269d0399ca653074449ca2);
+            
+        
+
+        circle_marker_6db012aeac3cb6f8d6e32dca14a6b4c2.bindPopup(popup_d95fca7f14eb637401a07027a15849b7)
+        ;
+
+        
+    
+    
+            circle_marker_6db012aeac3cb6f8d6e32dca14a6b4c2.bindTooltip(
+                `<div>
+                     Bad Gastein
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb54a0ee9c416ad65ad1315bce5355f4 = L.circleMarker(
+                [46.9495485784874, 16.0128652003845],
+                {"bubblingMouseEvents": true, "color": "#ff7300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7300ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.3766, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c97e3458d130d87f2483e0ecc5a2b10d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed8ab5c0fb4b45576a822add0bb51379 = $(`<div id="html_ed8ab5c0fb4b45576a822add0bb51379" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Fehring<br><b>Average Delay:</b> 24.06 minutes<br><b>Station Count:</b> 269</div>`)[0];
+                popup_c97e3458d130d87f2483e0ecc5a2b10d.setContent(html_ed8ab5c0fb4b45576a822add0bb51379);
+            
+        
+
+        circle_marker_fb54a0ee9c416ad65ad1315bce5355f4.bindPopup(popup_c97e3458d130d87f2483e0ecc5a2b10d)
+        ;
+
+        
+    
+    
+            circle_marker_fb54a0ee9c416ad65ad1315bce5355f4.bindTooltip(
+                `<div>
+                     Fehring
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ffa5b32dc806a8ccf155b20b21183d2 = L.circleMarker(
+                [47.2386427080438, 10.8592124483677],
+                {"bubblingMouseEvents": true, "color": "#ff7500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7500ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8184, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_5f47f294a5bc7f4d6c91e5e2e9a7f39b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ceaa037f7e62a66a73f2b18479782a4 = $(`<div id="html_8ceaa037f7e62a66a73f2b18479782a4" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Ötztal<br><b>Average Delay:</b> 23.91 minutes<br><b>Station Count:</b> 4156</div>`)[0];
+                popup_5f47f294a5bc7f4d6c91e5e2e9a7f39b.setContent(html_8ceaa037f7e62a66a73f2b18479782a4);
+            
+        
+
+        circle_marker_2ffa5b32dc806a8ccf155b20b21183d2.bindPopup(popup_5f47f294a5bc7f4d6c91e5e2e9a7f39b)
+        ;
+
+        
+    
+    
+            circle_marker_2ffa5b32dc806a8ccf155b20b21183d2.bindTooltip(
+                `<div>
+                     Ötztal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9659ad9144009c0e87bed50d115fd08e = L.circleMarker(
+                [47.238722, 13.10309623],
+                {"bubblingMouseEvents": true, "color": "#ff7800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1504, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_61ad2e6a6021a3abb8feffac367c3177 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f75854049494bc3319dd44f856d8ced = $(`<div id="html_5f75854049494bc3319dd44f856d8ced" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Dorfgastein<br><b>Average Delay:</b> 23.69 minutes<br><b>Station Count:</b> 1536</div>`)[0];
+                popup_61ad2e6a6021a3abb8feffac367c3177.setContent(html_5f75854049494bc3319dd44f856d8ced);
+            
+        
+
+        circle_marker_9659ad9144009c0e87bed50d115fd08e.bindPopup(popup_61ad2e6a6021a3abb8feffac367c3177)
+        ;
+
+        
+    
+    
+            circle_marker_9659ad9144009c0e87bed50d115fd08e.bindTooltip(
+                `<div>
+                     Dorfgastein
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7bf40b2c20ad9689ef6fdf5dedb2f246 = L.circleMarker(
+                [47.4539644866086, 12.3910196710616],
+                {"bubblingMouseEvents": true, "color": "#ff7900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7900ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8246, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_67f2eaac32e4e06e873295e38e6f104b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69d88c9a53d23b7f5d9b5474c16b40a3 = $(`<div id="html_69d88c9a53d23b7f5d9b5474c16b40a3" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kitzbühel<br><b>Average Delay:</b> 23.60 minutes<br><b>Station Count:</b> 589</div>`)[0];
+                popup_67f2eaac32e4e06e873295e38e6f104b.setContent(html_69d88c9a53d23b7f5d9b5474c16b40a3);
+            
+        
+
+        circle_marker_7bf40b2c20ad9689ef6fdf5dedb2f246.bindPopup(popup_67f2eaac32e4e06e873295e38e6f104b)
+        ;
+
+        
+    
+    
+            circle_marker_7bf40b2c20ad9689ef6fdf5dedb2f246.bindTooltip(
+                `<div>
+                     Kitzbühel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a19f8f659de80ba2573eb2cfb86839f = L.circleMarker(
+                [47.3937463805724, 13.6785570016636],
+                {"bubblingMouseEvents": true, "color": "#ff7900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7900ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2536, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_21d03cc0dbf27c084eee478741b6a769 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3acc8241fc217541fb0319e48b19639 = $(`<div id="html_b3acc8241fc217541fb0319e48b19639" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Schladming<br><b>Average Delay:</b> 23.56 minutes<br><b>Station Count:</b> 2324</div>`)[0];
+                popup_21d03cc0dbf27c084eee478741b6a769.setContent(html_b3acc8241fc217541fb0319e48b19639);
+            
+        
+
+        circle_marker_6a19f8f659de80ba2573eb2cfb86839f.bindPopup(popup_21d03cc0dbf27c084eee478741b6a769)
+        ;
+
+        
+    
+    
+            circle_marker_6a19f8f659de80ba2573eb2cfb86839f.bindTooltip(
+                `<div>
+                     Schladming
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea6f71a159c1a42c6f21dc7a33263538 = L.circleMarker(
+                [47.8130730557826, 13.0453076083411],
+                {"bubblingMouseEvents": true, "color": "#ff7a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7a00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 31.8696, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_6bc46e605f75f2c1c7749bdad903d903 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_554498c8590eb8d6baef69d65a50d535 = $(`<div id="html_554498c8590eb8d6baef69d65a50d535" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Salzburg Hbf<br><b>Average Delay:</b> 23.54 minutes<br><b>Station Count:</b> 22764</div>`)[0];
+                popup_6bc46e605f75f2c1c7749bdad903d903.setContent(html_554498c8590eb8d6baef69d65a50d535);
+            
+        
+
+        circle_marker_ea6f71a159c1a42c6f21dc7a33263538.bindPopup(popup_6bc46e605f75f2c1c7749bdad903d903)
+        ;
+
+        
+    
+    
+            circle_marker_ea6f71a159c1a42c6f21dc7a33263538.bindTooltip(
+                `<div>
+                     Salzburg Hbf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4214a75e365968b1c671db2240c501b = L.circleMarker(
+                [47.5196407322749, 12.4306713077081],
+                {"bubblingMouseEvents": true, "color": "#ff7a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7a00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8694, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_9c78f8ba1a3725a5c79cc4f710294fab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e10642f2d79803217aa59e3efaaa040 = $(`<div id="html_0e10642f2d79803217aa59e3efaaa040" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St. Johann in Tirol<br><b>Average Delay:</b> 23.50 minutes<br><b>Station Count:</b> 621</div>`)[0];
+                popup_9c78f8ba1a3725a5c79cc4f710294fab.setContent(html_0e10642f2d79803217aa59e3efaaa040);
+            
+        
+
+        circle_marker_f4214a75e365968b1c671db2240c501b.bindPopup(popup_9c78f8ba1a3725a5c79cc4f710294fab)
+        ;
+
+        
+    
+    
+            circle_marker_f4214a75e365968b1c671db2240c501b.bindTooltip(
+                `<div>
+                     St. Johann in Tirol
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6bdb6de6f8aef4d02bc4e84f5c4fd55 = L.circleMarker(
+                [46.7953947522212, 13.4884824706703],
+                {"bubblingMouseEvents": true, "color": "#ff7c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2368, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_019866980afad3f70d9e797cb4b514fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e23317465c0d94e8288f34a18e89badc = $(`<div id="html_e23317465c0d94e8288f34a18e89badc" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Spittal-Millstättersee<br><b>Average Delay:</b> 23.35 minutes<br><b>Station Count:</b> 2312</div>`)[0];
+                popup_019866980afad3f70d9e797cb4b514fb.setContent(html_e23317465c0d94e8288f34a18e89badc);
+            
+        
+
+        circle_marker_c6bdb6de6f8aef4d02bc4e84f5c4fd55.bindPopup(popup_019866980afad3f70d9e797cb4b514fb)
+        ;
+
+        
+    
+    
+            circle_marker_c6bdb6de6f8aef4d02bc4e84f5c4fd55.bindTooltip(
+                `<div>
+                     Spittal-Millstättersee
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a90ae0c3458ecd2c1d304d27cd5ffd94 = L.circleMarker(
+                [47.5032946062811, 9.74107941406851],
+                {"bubblingMouseEvents": true, "color": "#ff7c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.6664, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_0c986d47ad6ae06aac4fa00143f91689 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03023ace8484a54651f4eef4dba19051 = $(`<div id="html_03023ace8484a54651f4eef4dba19051" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Bregenz<br><b>Average Delay:</b> 23.29 minutes<br><b>Station Count:</b> 5476</div>`)[0];
+                popup_0c986d47ad6ae06aac4fa00143f91689.setContent(html_03023ace8484a54651f4eef4dba19051);
+            
+        
+
+        circle_marker_a90ae0c3458ecd2c1d304d27cd5ffd94.bindPopup(popup_0c986d47ad6ae06aac4fa00143f91689)
+        ;
+
+        
+    
+    
+            circle_marker_a90ae0c3458ecd2c1d304d27cd5ffd94.bindTooltip(
+                `<div>
+                     Bregenz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9cd1c1c9324cae3bcbbceda283db430d = L.circleMarker(
+                [47.1961455979624, 13.1015151956763],
+                {"bubblingMouseEvents": true, "color": "#ff7d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7d00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4779999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_02ef79bfe20e5801892c460140e20373 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ddc0b4a04f8bb0ad590b2a25ab953cf = $(`<div id="html_7ddc0b4a04f8bb0ad590b2a25ab953cf" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Bad Hofgastein<br><b>Average Delay:</b> 23.28 minutes<br><b>Station Count:</b> 1770</div>`)[0];
+                popup_02ef79bfe20e5801892c460140e20373.setContent(html_7ddc0b4a04f8bb0ad590b2a25ab953cf);
+            
+        
+
+        circle_marker_9cd1c1c9324cae3bcbbceda283db430d.bindPopup(popup_02ef79bfe20e5801892c460140e20373)
+        ;
+
+        
+    
+    
+            circle_marker_9cd1c1c9324cae3bcbbceda283db430d.bindTooltip(
+                `<div>
+                     Bad Hofgastein
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6aac78de0178b1bb9be8dcc62b7a2b29 = L.circleMarker(
+                [47.6077818710252, 15.6777307172914],
+                {"bubblingMouseEvents": true, "color": "#ff7e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.3294, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_1bd31e9ca56c6caac09a0dafcf6cda9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d63217ea0b1d0c827a66b159097aa4e = $(`<div id="html_6d63217ea0b1d0c827a66b159097aa4e" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Mürzzuschlag<br><b>Average Delay:</b> 23.18 minutes<br><b>Station Count:</b> 4521</div>`)[0];
+                popup_1bd31e9ca56c6caac09a0dafcf6cda9f.setContent(html_6d63217ea0b1d0c827a66b159097aa4e);
+            
+        
+
+        circle_marker_6aac78de0178b1bb9be8dcc62b7a2b29.bindPopup(popup_1bd31e9ca56c6caac09a0dafcf6cda9f)
+        ;
+
+        
+    
+    
+            circle_marker_6aac78de0178b1bb9be8dcc62b7a2b29.bindTooltip(
+                `<div>
+                     Mürzzuschlag
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e89c2d38b4396b0d6b5df0ebbd71ecd9 = L.circleMarker(
+                [47.4272249191147, 12.8301431314588],
+                {"bubblingMouseEvents": true, "color": "#ff7e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.6118, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c12286048af1a0e3665a4eb6d1ef8c82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c083fab8b7d726deea2fefad222dfee = $(`<div id="html_5c083fab8b7d726deea2fefad222dfee" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Saalfelden<br><b>Average Delay:</b> 23.16 minutes<br><b>Station Count:</b> 437</div>`)[0];
+                popup_c12286048af1a0e3665a4eb6d1ef8c82.setContent(html_5c083fab8b7d726deea2fefad222dfee);
+            
+        
+
+        circle_marker_e89c2d38b4396b0d6b5df0ebbd71ecd9.bindPopup(popup_c12286048af1a0e3665a4eb6d1ef8c82)
+        ;
+
+        
+    
+    
+            circle_marker_e89c2d38b4396b0d6b5df0ebbd71ecd9.bindTooltip(
+                `<div>
+                     Saalfelden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0d43f5d75815f8a73825035be239e00 = L.circleMarker(
+                [47.4489529919256, 12.3088956877759],
+                {"bubblingMouseEvents": true, "color": "#ff8000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9254, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_2d6fda1ba36755c36d48576342c4ef09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07a2b31bbb86a3a3b5246b9ac5ce41be = $(`<div id="html_07a2b31bbb86a3a3b5246b9ac5ce41be" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kirchberg in Tirol<br><b>Average Delay:</b> 23.02 minutes<br><b>Station Count:</b> 661</div>`)[0];
+                popup_2d6fda1ba36755c36d48576342c4ef09.setContent(html_07a2b31bbb86a3a3b5246b9ac5ce41be);
+            
+        
+
+        circle_marker_f0d43f5d75815f8a73825035be239e00.bindPopup(popup_2d6fda1ba36755c36d48576342c4ef09)
+        ;
+
+        
+    
+    
+            circle_marker_f0d43f5d75815f8a73825035be239e00.bindTooltip(
+                `<div>
+                     Kirchberg in Tirol
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00e7ee48c58517d263b7e194995c0d85 = L.circleMarker(
+                [47.3478498227458, 13.1952004966701],
+                {"bubblingMouseEvents": true, "color": "#ff8000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.647, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_04fc824f6c0aa3558fed0b1ecf2275fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c62258fe4322a118f43042d987448cf = $(`<div id="html_1c62258fe4322a118f43042d987448cf" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St. Johann im Pongau<br><b>Average Delay:</b> 23.00 minutes<br><b>Station Count:</b> 2605</div>`)[0];
+                popup_04fc824f6c0aa3558fed0b1ecf2275fd.setContent(html_1c62258fe4322a118f43042d987448cf);
+            
+        
+
+        circle_marker_00e7ee48c58517d263b7e194995c0d85.bindPopup(popup_04fc824f6c0aa3558fed0b1ecf2275fd)
+        ;
+
+        
+    
+    
+            circle_marker_00e7ee48c58517d263b7e194995c0d85.bindTooltip(
+                `<div>
+                     St. Johann im Pongau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3b9d0a929fc0899d6be3e4e15b171db = L.circleMarker(
+                [47.3467359821537, 15.0095997414816],
+                {"bubblingMouseEvents": true, "color": "#ff8100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.9186, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_521041df8feccb25b554fd2ed0bf4916 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08b2af6c5c1f95f4647a39c13ba7b644 = $(`<div id="html_08b2af6c5c1f95f4647a39c13ba7b644" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St.Michael in Obersteiermark<br><b>Average Delay:</b> 22.87 minutes<br><b>Station Count:</b> 2799</div>`)[0];
+                popup_521041df8feccb25b554fd2ed0bf4916.setContent(html_08b2af6c5c1f95f4647a39c13ba7b644);
+            
+        
+
+        circle_marker_f3b9d0a929fc0899d6be3e4e15b171db.bindPopup(popup_521041df8feccb25b554fd2ed0bf4916)
+        ;
+
+        
+    
+    
+            circle_marker_f3b9d0a929fc0899d6be3e4e15b171db.bindTooltip(
+                `<div>
+                     St.Michael in Obersteiermark
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a97f8bb1b5c29e541af61a432a4c7ac = L.circleMarker(
+                [47.4453201190652, 15.2922905782806],
+                {"bubblingMouseEvents": true, "color": "#ff8200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8200ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2299999999999995, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_5ebbc1176e818461535845e4e66f19ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ab5c2ddfa07c21b818374a4c4e3fa62 = $(`<div id="html_6ab5c2ddfa07c21b818374a4c4e3fa62" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kapfenberg<br><b>Average Delay:</b> 22.83 minutes<br><b>Station Count:</b> 4450</div>`)[0];
+                popup_5ebbc1176e818461535845e4e66f19ef.setContent(html_6ab5c2ddfa07c21b818374a4c4e3fa62);
+            
+        
+
+        circle_marker_0a97f8bb1b5c29e541af61a432a4c7ac.bindPopup(popup_5ebbc1176e818461535845e4e66f19ef)
+        ;
+
+        
+    
+    
+            circle_marker_0a97f8bb1b5c29e541af61a432a4c7ac.bindTooltip(
+                `<div>
+                     Kapfenberg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d80739841fa523c82a9950b8ed659a3a = L.circleMarker(
+                [47.3467359821537, 15.0095997414816],
+                {"bubblingMouseEvents": true, "color": "#ff8300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8300ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.4126, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_46bf438ba7a4dfe0c5854e0ae0c4cf8a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eeb596f4ba7bcfc808d73d4ec891f5d5 = $(`<div id="html_eeb596f4ba7bcfc808d73d4ec891f5d5" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St. Michael<br><b>Average Delay:</b> 22.76 minutes<br><b>Station Count:</b> 1009</div>`)[0];
+                popup_46bf438ba7a4dfe0c5854e0ae0c4cf8a.setContent(html_eeb596f4ba7bcfc808d73d4ec891f5d5);
+            
+        
+
+        circle_marker_d80739841fa523c82a9950b8ed659a3a.bindPopup(popup_46bf438ba7a4dfe0c5854e0ae0c4cf8a)
+        ;
+
+        
+    
+    
+            circle_marker_d80739841fa523c82a9950b8ed659a3a.bindTooltip(
+                `<div>
+                     St. Michael
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3e1557449d085a836f77f2c1d0c0695 = L.circleMarker(
+                [47.5626114699446, 14.2422139099157],
+                {"bubblingMouseEvents": true, "color": "#ff8400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8400ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5462, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_f0204b2e0307d65dddf4f203c33c4c3c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c24bff64874054617bd048be48a57da = $(`<div id="html_6c24bff64874054617bd048be48a57da" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Liezen<br><b>Average Delay:</b> 22.63 minutes<br><b>Station Count:</b> 2533</div>`)[0];
+                popup_f0204b2e0307d65dddf4f203c33c4c3c.setContent(html_6c24bff64874054617bd048be48a57da);
+            
+        
+
+        circle_marker_a3e1557449d085a836f77f2c1d0c0695.bindPopup(popup_f0204b2e0307d65dddf4f203c33c4c3c)
+        ;
+
+        
+    
+    
+            circle_marker_a3e1557449d085a836f77f2c1d0c0695.bindTooltip(
+                `<div>
+                     Liezen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce89077ce9dd1b14f8c6ccc566bd2c59 = L.circleMarker(
+                [47.3845386364825, 13.4678122359798],
+                {"bubblingMouseEvents": true, "color": "#ff8600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.9133999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_3f837e07ea7a026751a3b405f555704b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_750f01d1bb7cab6d9be9ff6a7128e14c = $(`<div id="html_750f01d1bb7cab6d9be9ff6a7128e14c" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Radstadt<br><b>Average Delay:</b> 22.43 minutes<br><b>Station Count:</b> 2081</div>`)[0];
+                popup_3f837e07ea7a026751a3b405f555704b.setContent(html_750f01d1bb7cab6d9be9ff6a7128e14c);
+            
+        
+
+        circle_marker_ce89077ce9dd1b14f8c6ccc566bd2c59.bindPopup(popup_3f837e07ea7a026751a3b405f555704b)
+        ;
+
+        
+    
+    
+            circle_marker_ce89077ce9dd1b14f8c6ccc566bd2c59.bindTooltip(
+                `<div>
+                     Radstadt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03796899121440711da85498518fa590 = L.circleMarker(
+                [47.5295527172301, 14.1065413525363],
+                {"bubblingMouseEvents": true, "color": "#ff8800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.794, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_6a42bc1e061491160309805a22ff0804 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f25475b366d2d2b7afabb13c1b8c176 = $(`<div id="html_2f25475b366d2d2b7afabb13c1b8c176" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Stainach-Irdning<br><b>Average Delay:</b> 22.25 minutes<br><b>Station Count:</b> 2710</div>`)[0];
+                popup_6a42bc1e061491160309805a22ff0804.setContent(html_2f25475b366d2d2b7afabb13c1b8c176);
+            
+        
+
+        circle_marker_03796899121440711da85498518fa590.bindPopup(popup_6a42bc1e061491160309805a22ff0804)
+        ;
+
+        
+    
+    
+            circle_marker_03796899121440711da85498518fa590.bindTooltip(
+                `<div>
+                     Stainach-Irdning
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e5fb96c1db693b55337295216f82200 = L.circleMarker(
+                [47.5503593641829, 14.3135311603319],
+                {"bubblingMouseEvents": true, "color": "#ff8a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8a00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5682, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c81927da81214e0db435fe99eb9b5ece = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cdc897fd1fb4a5e012c81e75100134f = $(`<div id="html_6cdc897fd1fb4a5e012c81e75100134f" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Selzthal<br><b>Average Delay:</b> 22.12 minutes<br><b>Station Count:</b> 3263</div>`)[0];
+                popup_c81927da81214e0db435fe99eb9b5ece.setContent(html_6cdc897fd1fb4a5e012c81e75100134f);
+            
+        
+
+        circle_marker_5e5fb96c1db693b55337295216f82200.bindPopup(popup_c81927da81214e0db435fe99eb9b5ece)
+        ;
+
+        
+    
+    
+            circle_marker_5e5fb96c1db693b55337295216f82200.bindTooltip(
+                `<div>
+                     Selzthal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e8386d00a6d5d9403b191f190a010b85 = L.circleMarker(
+                [47.3208432190241, 12.79626766209],
+                {"bubblingMouseEvents": true, "color": "#ff8c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9968, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_ece944ef191b6e9d2a9f87dbda187e09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c782ec3fc6cbdb262de93493a8f295ff = $(`<div id="html_c782ec3fc6cbdb262de93493a8f295ff" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Zell am See<br><b>Average Delay:</b> 21.97 minutes<br><b>Station Count:</b> 712</div>`)[0];
+                popup_ece944ef191b6e9d2a9f87dbda187e09.setContent(html_c782ec3fc6cbdb262de93493a8f295ff);
+            
+        
+
+        circle_marker_e8386d00a6d5d9403b191f190a010b85.bindPopup(popup_ece944ef191b6e9d2a9f87dbda187e09)
+        ;
+
+        
+    
+    
+            circle_marker_e8386d00a6d5d9403b191f190a010b85.bindTooltip(
+                `<div>
+                     Zell am See
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b0c9d1c16b199f34abd9959e54f9b6d = L.circleMarker(
+                [48.1202229202475, 16.5644307849107],
+                {"bubblingMouseEvents": true, "color": "#ff9100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.8488, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_176e93418f049ccfacad93fe51a21487 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50c84ab9ff191626adc0b51cc4e0c499 = $(`<div id="html_50c84ab9ff191626adc0b51cc4e0c499" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Flughafen Wien<br><b>Average Delay:</b> 21.51 minutes<br><b>Station Count:</b> 4892</div>`)[0];
+                popup_176e93418f049ccfacad93fe51a21487.setContent(html_50c84ab9ff191626adc0b51cc4e0c499);
+            
+        
+
+        circle_marker_5b0c9d1c16b199f34abd9959e54f9b6d.bindPopup(popup_176e93418f049ccfacad93fe51a21487)
+        ;
+
+        
+    
+    
+            circle_marker_5b0c9d1c16b199f34abd9959e54f9b6d.bindTooltip(
+                `<div>
+                     Flughafen Wien
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_42fce28cc54b788717236a757755f607 = L.circleMarker(
+                [46.7798270595866, 15.547412119006],
+                {"bubblingMouseEvents": true, "color": "#ff9700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.443, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_2359fcddc732d68d7b3358e2a35487d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9a1567f157c957f08a43a1a0e77030c = $(`<div id="html_f9a1567f157c957f08a43a1a0e77030c" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Leibnitz<br><b>Average Delay:</b> 21.02 minutes<br><b>Station Count:</b> 1745</div>`)[0];
+                popup_2359fcddc732d68d7b3358e2a35487d5.setContent(html_f9a1567f157c957f08a43a1a0e77030c);
+            
+        
+
+        circle_marker_42fce28cc54b788717236a757755f607.bindPopup(popup_2359fcddc732d68d7b3358e2a35487d5)
+        ;
+
+        
+    
+    
+            circle_marker_42fce28cc54b788717236a757755f607.bindTooltip(
+                `<div>
+                     Leibnitz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08a459df41da4df2793a0f1f32ca4c52 = L.circleMarker(
+                [47.07375448, 15.41681504],
+                {"bubblingMouseEvents": true, "color": "#ff9c00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9c00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.189, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_eee2ce7e57cfb045f8e70551ddd5f5f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c1e95e85433593270e1b7475675165f = $(`<div id="html_1c1e95e85433593270e1b7475675165f" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Graz Don Bosco (Bahnsteige 1-2)<br><b>Average Delay:</b> 20.60 minutes<br><b>Station Count:</b> 135</div>`)[0];
+                popup_eee2ce7e57cfb045f8e70551ddd5f5f6.setContent(html_1c1e95e85433593270e1b7475675165f);
+            
+        
+
+        circle_marker_08a459df41da4df2793a0f1f32ca4c52.bindPopup(popup_eee2ce7e57cfb045f8e70551ddd5f5f6)
+        ;
+
+        
+    
+    
+            circle_marker_08a459df41da4df2793a0f1f32ca4c52.bindTooltip(
+                `<div>
+                     Graz Don Bosco (Bahnsteige 1-2)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e694802f5ade462586e37332bb7e031 = L.circleMarker(
+                [47.5576588359976, 13.6835426514912],
+                {"bubblingMouseEvents": true, "color": "#ff9d00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9d00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1414, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_9738949ad7aa9d0831bc3784efb2b263 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f06760268cae24608f5c8cd75d623fef = $(`<div id="html_f06760268cae24608f5c8cd75d623fef" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Obertraun-Dachsteinhöhlen<br><b>Average Delay:</b> 20.49 minutes<br><b>Station Count:</b> 101</div>`)[0];
+                popup_9738949ad7aa9d0831bc3784efb2b263.setContent(html_f06760268cae24608f5c8cd75d623fef);
+            
+        
+
+        circle_marker_3e694802f5ade462586e37332bb7e031.bindPopup(popup_9738949ad7aa9d0831bc3784efb2b263)
+        ;
+
+        
+    
+    
+            circle_marker_3e694802f5ade462586e37332bb7e031.bindTooltip(
+                `<div>
+                     Obertraun-Dachsteinhöhlen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eddb9840269cdb1e92e85658634f036e = L.circleMarker(
+                [48.2254501682152, 14.2532542047591],
+                {"bubblingMouseEvents": true, "color": "#ff9e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.5124, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_0ee51c129ce33e37241b45967d91730d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad61c3ae244e35e1467b10549467956b = $(`<div id="html_ad61c3ae244e35e1467b10549467956b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Traun OÖ<br><b>Average Delay:</b> 20.43 minutes<br><b>Station Count:</b> 366</div>`)[0];
+                popup_0ee51c129ce33e37241b45967d91730d.setContent(html_ad61c3ae244e35e1467b10549467956b);
+            
+        
+
+        circle_marker_eddb9840269cdb1e92e85658634f036e.bindPopup(popup_0ee51c129ce33e37241b45967d91730d)
+        ;
+
+        
+    
+    
+            circle_marker_eddb9840269cdb1e92e85658634f036e.bindTooltip(
+                `<div>
+                     Traun OÖ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3128223d57c52949881f95e347023cd7 = L.circleMarker(
+                [47.6395686235483, 15.8307766922681],
+                {"bubblingMouseEvents": true, "color": "#ff9e00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9e00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.7678, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_53a2cdfddbe81f4da5372a1d52fe788a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c418144b6537c4af0f1b70444eab146b = $(`<div id="html_c418144b6537c4af0f1b70444eab146b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Semmering<br><b>Average Delay:</b> 20.41 minutes<br><b>Station Count:</b> 1977</div>`)[0];
+                popup_53a2cdfddbe81f4da5372a1d52fe788a.setContent(html_c418144b6537c4af0f1b70444eab146b);
+            
+        
+
+        circle_marker_3128223d57c52949881f95e347023cd7.bindPopup(popup_53a2cdfddbe81f4da5372a1d52fe788a)
+        ;
+
+        
+    
+    
+            circle_marker_3128223d57c52949881f95e347023cd7.bindTooltip(
+                `<div>
+                     Semmering
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e1a55192ef87823ca51760d7aacd091 = L.circleMarker(
+                [48.3559867091429, 14.5225781101284],
+                {"bubblingMouseEvents": true, "color": "#ffa100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.5428, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_00fd8f95ce71fac27eece50bc661b3ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_970921ed54d7dade7ef110831827525f = $(`<div id="html_970921ed54d7dade7ef110831827525f" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Pregarten<br><b>Average Delay:</b> 20.11 minutes<br><b>Station Count:</b> 1102</div>`)[0];
+                popup_00fd8f95ce71fac27eece50bc661b3ab.setContent(html_970921ed54d7dade7ef110831827525f);
+            
+        
+
+        circle_marker_7e1a55192ef87823ca51760d7aacd091.bindPopup(popup_00fd8f95ce71fac27eece50bc661b3ab)
+        ;
+
+        
+    
+    
+            circle_marker_7e1a55192ef87823ca51760d7aacd091.bindTooltip(
+                `<div>
+                     Pregarten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f659b93cdadb9253a5068ebd234aa35b = L.circleMarker(
+                [48.1788149855729, 14.5220391209579],
+                {"bubblingMouseEvents": true, "color": "#ffa700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa700ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0648, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_e725c1d5ad9e2a816f0eb6ba6fc3ebe4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b839c115795dcba22f364955fca4151c = $(`<div id="html_b839c115795dcba22f364955fca4151c" style="width: 100.0%; height: 100.0%;"><b>Station:</b> St. Valentin<br><b>Average Delay:</b> 19.61 minutes<br><b>Station Count:</b> 4332</div>`)[0];
+                popup_e725c1d5ad9e2a816f0eb6ba6fc3ebe4.setContent(html_b839c115795dcba22f364955fca4151c);
+            
+        
+
+        circle_marker_f659b93cdadb9253a5068ebd234aa35b.bindPopup(popup_e725c1d5ad9e2a816f0eb6ba6fc3ebe4)
+        ;
+
+        
+    
+    
+            circle_marker_f659b93cdadb9253a5068ebd234aa35b.bindTooltip(
+                `<div>
+                     St. Valentin
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b36af9f6c4b4ba9310f4b082efa318b5 = L.circleMarker(
+                [48.2950036058816, 15.9962194181674],
+                {"bubblingMouseEvents": true, "color": "#ffa800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa800ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0778, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_49435367720b3458fe91a8bce2c56958 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6460d36bdb9a565960961f99d5db8071 = $(`<div id="html_6460d36bdb9a565960961f99d5db8071" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Tullnerfeld<br><b>Average Delay:</b> 19.58 minutes<br><b>Station Count:</b> 3627</div>`)[0];
+                popup_49435367720b3458fe91a8bce2c56958.setContent(html_6460d36bdb9a565960961f99d5db8071);
+            
+        
+
+        circle_marker_b36af9f6c4b4ba9310f4b082efa318b5.bindPopup(popup_49435367720b3458fe91a8bce2c56958)
+        ;
+
+        
+    
+    
+            circle_marker_b36af9f6c4b4ba9310f4b082efa318b5.bindTooltip(
+                `<div>
+                     Tullnerfeld
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb522bdbe2c29efcca770f44cee96c31 = L.circleMarker(
+                [48.012243752775, 13.7205981569663],
+                {"bubblingMouseEvents": true, "color": "#ffaa00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.3566, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_dfd55fee5586b477d0fb7ebf87b056d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d163f809b1c6139e74679f64f9c5fd0e = $(`<div id="html_d163f809b1c6139e74679f64f9c5fd0e" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Attnang-Puchheim<br><b>Average Delay:</b> 19.34 minutes<br><b>Station Count:</b> 5969</div>`)[0];
+                popup_dfd55fee5586b477d0fb7ebf87b056d2.setContent(html_d163f809b1c6139e74679f64f9c5fd0e);
+            
+        
+
+        circle_marker_fb522bdbe2c29efcca770f44cee96c31.bindPopup(popup_dfd55fee5586b477d0fb7ebf87b056d2)
+        ;
+
+        
+    
+    
+            circle_marker_fb522bdbe2c29efcca770f44cee96c31.bindTooltip(
+                `<div>
+                     Attnang-Puchheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7afcaa25e70f865ee4a046cadc47271c = L.circleMarker(
+                [47.5278422146281, 14.3648069967566],
+                {"bubblingMouseEvents": true, "color": "#ffab00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffab00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.2334, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_045f5d8c9b7fcf6db1d9f9aecff1127c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ca67ce0f1f7fe133f465c247efce17b = $(`<div id="html_5ca67ce0f1f7fe133f465c247efce17b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Stadt Rottenmann<br><b>Average Delay:</b> 19.28 minutes<br><b>Station Count:</b> 881</div>`)[0];
+                popup_045f5d8c9b7fcf6db1d9f9aecff1127c.setContent(html_5ca67ce0f1f7fe133f465c247efce17b);
+            
+        
+
+        circle_marker_7afcaa25e70f865ee4a046cadc47271c.bindPopup(popup_045f5d8c9b7fcf6db1d9f9aecff1127c)
+        ;
+
+        
+    
+    
+            circle_marker_7afcaa25e70f865ee4a046cadc47271c.bindTooltip(
+                `<div>
+                     Stadt Rottenmann
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7edf588b1b596c01cb58909c8665931 = L.circleMarker(
+                [47.7745765209736, 14.1790892948918],
+                {"bubblingMouseEvents": true, "color": "#ffad00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffad00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.7252, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_2535c08368f4db223e288d419839b633 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b64b0a1eaa32d2e1c39d9b2e60053c6b = $(`<div id="html_b64b0a1eaa32d2e1c39d9b2e60053c6b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Hinterstoder<br><b>Average Delay:</b> 19.12 minutes<br><b>Station Count:</b> 518</div>`)[0];
+                popup_2535c08368f4db223e288d419839b633.setContent(html_b64b0a1eaa32d2e1c39d9b2e60053c6b);
+            
+        
+
+        circle_marker_f7edf588b1b596c01cb58909c8665931.bindPopup(popup_2535c08368f4db223e288d419839b633)
+        ;
+
+        
+    
+    
+            circle_marker_f7edf588b1b596c01cb58909c8665931.bindTooltip(
+                `<div>
+                     Hinterstoder
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c1525bf84dae8e8525f51557c8b59e8 = L.circleMarker(
+                [48.436872209085, 14.5382357455328],
+                {"bubblingMouseEvents": true, "color": "#ffad00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffad00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.778, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_7c41f800281870192d43e092b49667f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83e97488fda3e5b505f23b17214bf9b1 = $(`<div id="html_83e97488fda3e5b505f23b17214bf9b1" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kefermarkt<br><b>Average Delay:</b> 19.09 minutes<br><b>Station Count:</b> 1270</div>`)[0];
+                popup_7c41f800281870192d43e092b49667f4.setContent(html_83e97488fda3e5b505f23b17214bf9b1);
+            
+        
+
+        circle_marker_1c1525bf84dae8e8525f51557c8b59e8.bindPopup(popup_7c41f800281870192d43e092b49667f4)
+        ;
+
+        
+    
+    
+            circle_marker_1c1525bf84dae8e8525f51557c8b59e8.bindTooltip(
+                `<div>
+                     Kefermarkt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d5ae133bde7828516e09221ee1d3dbd7 = L.circleMarker(
+                [48.0099961598472, 13.6637886983906],
+                {"bubblingMouseEvents": true, "color": "#ffb300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb300ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.942, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_99a2034e6abbd8dbdab2f51459d839c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ed60b6eda9e966d2b5d978c7a3ab091 = $(`<div id="html_1ed60b6eda9e966d2b5d978c7a3ab091" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Vöcklabruck<br><b>Average Delay:</b> 18.63 minutes<br><b>Station Count:</b> 3530</div>`)[0];
+                popup_99a2034e6abbd8dbdab2f51459d839c1.setContent(html_1ed60b6eda9e966d2b5d978c7a3ab091);
+            
+        
+
+        circle_marker_d5ae133bde7828516e09221ee1d3dbd7.bindPopup(popup_99a2034e6abbd8dbdab2f51459d839c1)
+        ;
+
+        
+    
+    
+            circle_marker_d5ae133bde7828516e09221ee1d3dbd7.bindTooltip(
+                `<div>
+                     Vöcklabruck
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3669ff9d9054dd8f748ab277014a76b4 = L.circleMarker(
+                [47.7153367670756, 14.3279850532554],
+                {"bubblingMouseEvents": true, "color": "#ffb400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb400ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.7293999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_0a9032bfd00a234466b29990a7b24116 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d796a072b9de1f2c02bd3d5682cc6a4f = $(`<div id="html_d796a072b9de1f2c02bd3d5682cc6a4f" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Windischgarsten<br><b>Average Delay:</b> 18.55 minutes<br><b>Station Count:</b> 521</div>`)[0];
+                popup_0a9032bfd00a234466b29990a7b24116.setContent(html_d796a072b9de1f2c02bd3d5682cc6a4f);
+            
+        
+
+        circle_marker_3669ff9d9054dd8f748ab277014a76b4.bindPopup(popup_0a9032bfd00a234466b29990a7b24116)
+        ;
+
+        
+    
+    
+            circle_marker_3669ff9d9054dd8f748ab277014a76b4.bindTooltip(
+                `<div>
+                     Windischgarsten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_25cd0221934330187f51b14f9c357653 = L.circleMarker(
+                [48.4952568428613, 14.4815430679441],
+                {"bubblingMouseEvents": true, "color": "#ffb900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb900ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.89, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_96494060b8c0aff04ac044ef673ecc1c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36941dde9bf7f4a252d3f7e7a07215ab = $(`<div id="html_36941dde9bf7f4a252d3f7e7a07215ab" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Freistadt<br><b>Average Delay:</b> 18.06 minutes<br><b>Station Count:</b> 1350</div>`)[0];
+                popup_96494060b8c0aff04ac044ef673ecc1c.setContent(html_36941dde9bf7f4a252d3f7e7a07215ab);
+            
+        
+
+        circle_marker_25cd0221934330187f51b14f9c357653.bindPopup(popup_96494060b8c0aff04ac044ef673ecc1c)
+        ;
+
+        
+    
+    
+            circle_marker_25cd0221934330187f51b14f9c357653.bindTooltip(
+                `<div>
+                     Freistadt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e243608a61a1e3cb0c5b91bef394d01d = L.circleMarker(
+                [46.7096582053222, 15.6288623658285],
+                {"bubblingMouseEvents": true, "color": "#ffbd00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffbd00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.5676, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_15c4ef9cfd308d536bfda80ff7013610 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf4c8c3ca689ff499d59198a7796d769 = $(`<div id="html_bf4c8c3ca689ff499d59198a7796d769" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Spielfeld-Straß<br><b>Average Delay:</b> 17.76 minutes<br><b>Station Count:</b> 1834</div>`)[0];
+                popup_15c4ef9cfd308d536bfda80ff7013610.setContent(html_bf4c8c3ca689ff499d59198a7796d769);
+            
+        
+
+        circle_marker_e243608a61a1e3cb0c5b91bef394d01d.bindPopup(popup_15c4ef9cfd308d536bfda80ff7013610)
+        ;
+
+        
+    
+    
+            circle_marker_e243608a61a1e3cb0c5b91bef394d01d.bindTooltip(
+                `<div>
+                     Spielfeld-Straß
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_334a69f667c9e5776751541cfbbede04 = L.circleMarker(
+                [47.955338708528, 13.2255545701248],
+                {"bubblingMouseEvents": true, "color": "#ffc000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffc000ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.361, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_54efe01e59704a84e1c59fa5229694a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_922221b34d9e1e7aa2a83a54127af30b = $(`<div id="html_922221b34d9e1e7aa2a83a54127af30b" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Neumarkt am Wallersee<br><b>Average Delay:</b> 17.52 minutes<br><b>Station Count:</b> 3115</div>`)[0];
+                popup_54efe01e59704a84e1c59fa5229694a4.setContent(html_922221b34d9e1e7aa2a83a54127af30b);
+            
+        
+
+        circle_marker_334a69f667c9e5776751541cfbbede04.bindPopup(popup_54efe01e59704a84e1c59fa5229694a4)
+        ;
+
+        
+    
+    
+            circle_marker_334a69f667c9e5776751541cfbbede04.bindTooltip(
+                `<div>
+                     Neumarkt am Wallersee
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53c7418b206591aecf80e7e0e7912203 = L.circleMarker(
+                [48.0697823965365, 14.1916207931071],
+                {"bubblingMouseEvents": true, "color": "#ffc600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffc600ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.8049999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_680230878a81d4d30251edf3674998e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9389b7e70143b009cf7239e350b4e142 = $(`<div id="html_9389b7e70143b009cf7239e350b4e142" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Rohr-Bad Hall<br><b>Average Delay:</b> 16.95 minutes<br><b>Station Count:</b> 575</div>`)[0];
+                popup_680230878a81d4d30251edf3674998e4.setContent(html_9389b7e70143b009cf7239e350b4e142);
+            
+        
+
+        circle_marker_53c7418b206591aecf80e7e0e7912203.bindPopup(popup_680230878a81d4d30251edf3674998e4)
+        ;
+
+        
+    
+    
+            circle_marker_53c7418b206591aecf80e7e0e7912203.bindTooltip(
+                `<div>
+                     Rohr-Bad Hall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad0e8a702db97117897408074edfd005 = L.circleMarker(
+                [48.5572726729473, 14.4490150715017],
+                {"bubblingMouseEvents": true, "color": "#ffcb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffcb00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.6524, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c9510e23eee7d25b83838214991fc7be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0112ea085e4374c8aed0ec5d6c2602dc = $(`<div id="html_0112ea085e4374c8aed0ec5d6c2602dc" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Summerau<br><b>Average Delay:</b> 16.50 minutes<br><b>Station Count:</b> 466</div>`)[0];
+                popup_c9510e23eee7d25b83838214991fc7be.setContent(html_0112ea085e4374c8aed0ec5d6c2602dc);
+            
+        
+
+        circle_marker_ad0e8a702db97117897408074edfd005.bindPopup(popup_c9510e23eee7d25b83838214991fc7be)
+        ;
+
+        
+    
+    
+            circle_marker_ad0e8a702db97117897408074edfd005.bindTooltip(
+                `<div>
+                     Summerau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c22ef06287fcfd6aadf2e4848f624bd9 = L.circleMarker(
+                [48.1360102829229, 14.2383421710406],
+                {"bubblingMouseEvents": true, "color": "#ffcc00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffcc00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.7672, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c0fad6c615a5f3c051bf2f677c673298 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33ce1554e4c5d120fd010db9e4a7c84d = $(`<div id="html_33ce1554e4c5d120fd010db9e4a7c84d" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Neuhofen/Krems<br><b>Average Delay:</b> 16.41 minutes<br><b>Station Count:</b> 548</div>`)[0];
+                popup_c0fad6c615a5f3c051bf2f677c673298.setContent(html_33ce1554e4c5d120fd010db9e4a7c84d);
+            
+        
+
+        circle_marker_c22ef06287fcfd6aadf2e4848f624bd9.bindPopup(popup_c0fad6c615a5f3c051bf2f677c673298)
+        ;
+
+        
+    
+    
+            circle_marker_c22ef06287fcfd6aadf2e4848f624bd9.bindTooltip(
+                `<div>
+                     Neuhofen/Krems
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de38582a5995af17005fc792e3229e80 = L.circleMarker(
+                [47.9064768907548, 14.1163329891345],
+                {"bubblingMouseEvents": true, "color": "#ffd100ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd100ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9996, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_8f378bce97ba3e89b062d1b49946353e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d4a118efa4a23feea21b4390a22feebc = $(`<div id="html_d4a118efa4a23feea21b4390a22feebc" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kirchdorf/Krems<br><b>Average Delay:</b> 16.04 minutes<br><b>Station Count:</b> 714</div>`)[0];
+                popup_8f378bce97ba3e89b062d1b49946353e.setContent(html_d4a118efa4a23feea21b4390a22feebc);
+            
+        
+
+        circle_marker_de38582a5995af17005fc792e3229e80.bindPopup(popup_8f378bce97ba3e89b062d1b49946353e)
+        ;
+
+        
+    
+    
+            circle_marker_de38582a5995af17005fc792e3229e80.bindTooltip(
+                `<div>
+                     Kirchdorf/Krems
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c1711b566d6d905fa5ee33c535869f0 = L.circleMarker(
+                [48.0530259456002, 14.1401922430841],
+                {"bubblingMouseEvents": true, "color": "#ffd900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd900ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.036, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_1214e59d8e2c266e7e68e280317a2bf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67c0ccb1f4e38663cdce58dfe51a0df3 = $(`<div id="html_67c0ccb1f4e38663cdce58dfe51a0df3" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kremsmünster<br><b>Average Delay:</b> 15.35 minutes<br><b>Station Count:</b> 740</div>`)[0];
+                popup_1214e59d8e2c266e7e68e280317a2bf3.setContent(html_67c0ccb1f4e38663cdce58dfe51a0df3);
+            
+        
+
+        circle_marker_0c1711b566d6d905fa5ee33c535869f0.bindPopup(popup_1214e59d8e2c266e7e68e280317a2bf3)
+        ;
+
+        
+    
+    
+            circle_marker_0c1711b566d6d905fa5ee33c535869f0.bindTooltip(
+                `<div>
+                     Kremsmünster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77b60b5463214547d3d439c4836814e1 = L.circleMarker(
+                [47.6249370090466, 13.1421549791355],
+                {"bubblingMouseEvents": true, "color": "#ffdb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffdb00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1414, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_f96f51ce8dd91b50167e93c9b9ef345a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8461983719e2f9959488cc2cf65e58cd = $(`<div id="html_8461983719e2f9959488cc2cf65e58cd" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Kuchl<br><b>Average Delay:</b> 15.14 minutes<br><b>Station Count:</b> 101</div>`)[0];
+                popup_f96f51ce8dd91b50167e93c9b9ef345a.setContent(html_8461983719e2f9959488cc2cf65e58cd);
+            
+        
+
+        circle_marker_77b60b5463214547d3d439c4836814e1.bindPopup(popup_f96f51ce8dd91b50167e93c9b9ef345a)
+        ;
+
+        
+    
+    
+            circle_marker_77b60b5463214547d3d439c4836814e1.bindTooltip(
+                `<div>
+                     Kuchl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_723cefc454ed90e93e1aec03a9d408a9 = L.circleMarker(
+                [48.4608786750852, 14.5216438622328],
+                {"bubblingMouseEvents": true, "color": "#fff200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff200ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4074, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_b2c1de7c17e70088872682858020709d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fffa897a16b5388667ad3f1fc163b8b5 = $(`<div id="html_fffa897a16b5388667ad3f1fc163b8b5" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Lasberg-St. Oswald<br><b>Average Delay:</b> 13.22 minutes<br><b>Station Count:</b> 291</div>`)[0];
+                popup_b2c1de7c17e70088872682858020709d.setContent(html_fffa897a16b5388667ad3f1fc163b8b5);
+            
+        
+
+        circle_marker_723cefc454ed90e93e1aec03a9d408a9.bindPopup(popup_b2c1de7c17e70088872682858020709d)
+        ;
+
+        
+    
+    
+            circle_marker_723cefc454ed90e93e1aec03a9d408a9.bindTooltip(
+                `<div>
+                     Lasberg-St. Oswald
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75f730c471a77d8675835a7c2302257e = L.circleMarker(
+                [48.4608786750852, 14.5216438622328],
+                {"bubblingMouseEvents": true, "color": "#ffff00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00ff", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.2464, "stroke": true, "weight": 3}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+        var popup_c34c68d3cc4cf5bda582183af1def104 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6446c147b10d762aa39560e3aa302435 = $(`<div id="html_6446c147b10d762aa39560e3aa302435" style="width: 100.0%; height: 100.0%;"><b>Station:</b> Lasberg-St.Oswald<br><b>Average Delay:</b> 12.02 minutes<br><b>Station Count:</b> 176</div>`)[0];
+                popup_c34c68d3cc4cf5bda582183af1def104.setContent(html_6446c147b10d762aa39560e3aa302435);
+            
+        
+
+        circle_marker_75f730c471a77d8675835a7c2302257e.bindPopup(popup_c34c68d3cc4cf5bda582183af1def104)
+        ;
+
+        
+    
+    
+            circle_marker_75f730c471a77d8675835a7c2302257e.bindTooltip(
+                `<div>
+                     Lasberg-St.Oswald
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5c0c4cd375e97e86f81daa1e66dd3357 = L.marker(
+                [46.7463329637924, 12.974439515567],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_fe3ea6482b3cf293536708268e6eb6cf = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eOberdrauburg\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_5c0c4cd375e97e86f81daa1e66dd3357.setIcon(div_icon_fe3ea6482b3cf293536708268e6eb6cf);
+        
+    
+                marker_5c0c4cd375e97e86f81daa1e66dd3357.setIcon(div_icon_fe3ea6482b3cf293536708268e6eb6cf);
+            
+    
+            var marker_4ea2b01430cf960452af67ea78b40cbd = L.marker(
+                [46.6158074986651, 14.3136659076245],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_46ba691eeed0d427614d5b2088a81ea8 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eKlagenfurt Hbf\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_4ea2b01430cf960452af67ea78b40cbd.setIcon(div_icon_46ba691eeed0d427614d5b2088a81ea8);
+        
+    
+                marker_4ea2b01430cf960452af67ea78b40cbd.setIcon(div_icon_46ba691eeed0d427614d5b2088a81ea8);
+            
+    
+            var marker_458cc6ff62f0838c827e70d3afecf680 = L.marker(
+                [46.7416976562355, 13.1920923257867],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_978bceb0c6469fb95a51b654ad619db2 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eGreifenburg-Wei\u00dfensee\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_458cc6ff62f0838c827e70d3afecf680.setIcon(div_icon_978bceb0c6469fb95a51b654ad619db2);
+        
+    
+                marker_458cc6ff62f0838c827e70d3afecf680.setIcon(div_icon_978bceb0c6469fb95a51b654ad619db2);
+            
+    
+            var marker_071d76eb45670e34687c4b2f50a53dca = L.marker(
+                [46.8283850916648, 12.7712855140351],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_345cedab419a3595f343a6ff65cf17a3 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eLienz in Osttirol\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_071d76eb45670e34687c4b2f50a53dca.setIcon(div_icon_345cedab419a3595f343a6ff65cf17a3);
+        
+    
+                marker_071d76eb45670e34687c4b2f50a53dca.setIcon(div_icon_345cedab419a3595f343a6ff65cf17a3);
+            
+    
+            var marker_65cfdf5b4ad81231fea59c2e91fba007 = L.marker(
+                [48.4642204474756, 13.4421114356976],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_026915c52cb501bad9fffaea7a326972 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eSch\u00e4rding\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_65cfdf5b4ad81231fea59c2e91fba007.setIcon(div_icon_026915c52cb501bad9fffaea7a326972);
+        
+    
+                marker_65cfdf5b4ad81231fea59c2e91fba007.setIcon(div_icon_026915c52cb501bad9fffaea7a326972);
+            
+    
+            var marker_acff0530e6adf73a50c280564ea6fb89 = L.marker(
+                [47.3373800107614, 9.63744077972521],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_82be92944cd3b0297504cd4a8ac04972 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eG\u00f6tzis\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_acff0530e6adf73a50c280564ea6fb89.setIcon(div_icon_82be92944cd3b0297504cd4a8ac04972);
+        
+    
+                marker_acff0530e6adf73a50c280564ea6fb89.setIcon(div_icon_82be92944cd3b0297504cd4a8ac04972);
+            
+    
+            var marker_1558d4c0aef6ee1c97613aab25a71797 = L.marker(
+                [46.6185409218168, 13.8489045290149],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_7840d0174b6424f5bd2979d1c7193b65 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eVillach Hbf\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_1558d4c0aef6ee1c97613aab25a71797.setIcon(div_icon_7840d0174b6424f5bd2979d1c7193b65);
+        
+    
+                marker_1558d4c0aef6ee1c97613aab25a71797.setIcon(div_icon_7840d0174b6424f5bd2979d1c7193b65);
+            
+    
+            var marker_caf0fb090d0a7daa5f590d75b5a7ec2b = L.marker(
+                [47.2408932201416, 9.60394260277573],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_fd4433a61b5e8879adc5be7c68b562f5 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eFeldkirch\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_caf0fb090d0a7daa5f590d75b5a7ec2b.setIcon(div_icon_fd4433a61b5e8879adc5be7c68b562f5);
+        
+    
+                marker_caf0fb090d0a7daa5f590d75b5a7ec2b.setIcon(div_icon_fd4433a61b5e8879adc5be7c68b562f5);
+            
+    
+            var marker_abbe0e7d0750248ae1c749b17ff05aa5 = L.marker(
+                [48.2906764721424, 14.291172092907],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_56e631a61486ae8bad411de4afad111d = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eLinzHbf\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_abbe0e7d0750248ae1c749b17ff05aa5.setIcon(div_icon_56e631a61486ae8bad411de4afad111d);
+        
+    
+                marker_abbe0e7d0750248ae1c749b17ff05aa5.setIcon(div_icon_56e631a61486ae8bad411de4afad111d);
+            
+    
+            var marker_00fc0550b6d9c5d16bcc65d3a0bca572 = L.marker(
+                [47.3647554015789, 9.68114381830371],
+                {
+}
+            ).addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+            var div_icon_7cbe9b61bd28fa18887ffb4a0402d30a = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size: 10pt; transform: rotate(345deg); font-weight:bold; padding: 2px;\u0027\u003eHohenems\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_00fc0550b6d9c5d16bcc65d3a0bca572.setIcon(div_icon_7cbe9b61bd28fa18887ffb4a0402d30a);
+        
+    
+                marker_00fc0550b6d9c5d16bcc65d3a0bca572.setIcon(div_icon_7cbe9b61bd28fa18887ffb4a0402d30a);
+            
+    
+            tile_layer_c44a72bf7030f73cc366bc49e2afafce.addTo(map_f81de4661e26d730305f1b03cd55b16c);
+        
+    
+                marker_5c0c4cd375e97e86f81daa1e66dd3357.setIcon(div_icon_fe3ea6482b3cf293536708268e6eb6cf);
+            
+    
+                marker_4ea2b01430cf960452af67ea78b40cbd.setIcon(div_icon_46ba691eeed0d427614d5b2088a81ea8);
+            
+    
+                marker_458cc6ff62f0838c827e70d3afecf680.setIcon(div_icon_978bceb0c6469fb95a51b654ad619db2);
+            
+    
+                marker_071d76eb45670e34687c4b2f50a53dca.setIcon(div_icon_345cedab419a3595f343a6ff65cf17a3);
+            
+    
+                marker_65cfdf5b4ad81231fea59c2e91fba007.setIcon(div_icon_026915c52cb501bad9fffaea7a326972);
+            
+    
+                marker_acff0530e6adf73a50c280564ea6fb89.setIcon(div_icon_82be92944cd3b0297504cd4a8ac04972);
+            
+    
+                marker_1558d4c0aef6ee1c97613aab25a71797.setIcon(div_icon_7840d0174b6424f5bd2979d1c7193b65);
+            
+    
+                marker_caf0fb090d0a7daa5f590d75b5a7ec2b.setIcon(div_icon_fd4433a61b5e8879adc5be7c68b562f5);
+            
+    
+                marker_abbe0e7d0750248ae1c749b17ff05aa5.setIcon(div_icon_56e631a61486ae8bad411de4afad111d);
+            
+    
+                marker_00fc0550b6d9c5d16bcc65d3a0bca572.setIcon(div_icon_7cbe9b61bd28fa18887ffb4a0402d30a);
+            
+</script>
+</html>
