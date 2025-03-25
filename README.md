@@ -1,7 +1,9 @@
 # Weather-and-Mobility
+Include, how data has to be stored in extra files
+
 This is the code to my Bachelors Thesis
 
-Order of loading the code for analysisunderstanding:
+Order of loading the code for understanding the analysis:
 
 (0. Train_Scrapper -> Not needed, as scrapped data is in Datafile)
 1. Train_preprocessing -> Make Data workable
