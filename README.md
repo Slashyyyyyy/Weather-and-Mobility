@@ -1,11 +1,20 @@
 # Weather-and-Mobility
 This is the code to my Bachelors Thesis
 
-Order of loading the code for analysisunderstanding:
-(0. Train_Scrapper -> Not needed, as scrapped data is in Datafile)
+The different parts of my analysis can be accessed via the different branches:
+First Branch: Train
+Second Branch: Weather
+Third Branch: Train_Weather
+Fourth Branch: Maps
+Fifth Branch: Unused Code
+Sixth Branch: Data
+
+If all the data is unziped an kept in the same order, the code should run without any problems. 
+
+Order of loading the code for understanding my analysis:
+0. Train_Scrapper -> Not needed, as scrapped data is in Datafile
 1. Train_preprocessing -> Make Data workable
-2. Train_Station_coordinates -> include coordinates for the stations
-2.1. Train_Trip_headsign -> Work in Progress -> also include the destination/distance and shape travelled of each train from GTFS
+2. Train_GTFS -> Enrich Data with GTFS
 3. Train_Analysis -> First dive into the data
 4. Weather_Preprocessing -> Concat different years
 5. Weather_Analysis -> Getting a feeling of the weather data
