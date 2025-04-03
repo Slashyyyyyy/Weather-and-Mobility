@@ -1,13 +1,13 @@
 # Weather-and-Mobility
 This is the code to my Bachelors Thesis
 
-The different parts of my analysis can be accessed via the different branches:
-First Branch: Train
-Second Branch: Weather
-Third Branch: Train_Weather
-Fourth Branch: Maps
-Fifth Branch: Unused Code
-Sixth Branch: Data
+The different parts of my analysis can be accessed via the different branches:  
+First Branch: Train  
+Second Branch: Weather  
+Third Branch: Train_Weather  
+Fourth Branch: Maps  
+Fifth Branch: Unused Code  
+Sixth Branch: Data  
 
 If all the data is unziped an kept in the same order, the code should run without any problems. 
 
